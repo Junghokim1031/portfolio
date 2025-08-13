@@ -1,19 +1,33 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-h1{
-    text-align: center;
-    font-size: 2rem;
-    color: darkmagenta;
-    background-color: aliceblue;
-}
-h2{
-    font-size: 1.5rem;
-    color: magenta;
-    background-color: rgb(205, 231, 255);
-}
-p{
-    color: black;
-    background-color: azure;
-}
+/* 공통 코드 작성*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+    h1{
+        margin: 0px;
+        padding: 10px;
+        color: #fff;
+        background-color: #222;
+        text-align: center;
+    }
+    h2{
+        font-family:  "Nanum Pen Script", sans-serif;
+        background-image: url(https://cdn.pixabay.com/photo/2014/12/07/09/30/milky-way-559641_1280.jpg);
+        margin: 0 auto;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+    }   
+    a{
+        font-size: 2.5rem;
+        font-family:  "Nanum Pen Script", sans-serif;
+    }
+    p{
+        margin: 0;
+        font-size: .7rem;
+    }
+    .projectbox{
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        background-color: lightcyan;
+        text-align: center;
+    }
