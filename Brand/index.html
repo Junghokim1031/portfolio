@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Air Max</title>
+    
+    <!-- https allows us to access the webpage outside of server -->
+    <!-- Without https:. it only runs on server -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- in the old days, we needed prefixes on certain codes for compatibility on browsers -->
+    <!-- this allows us to not need any prefixes for certain browsers -->
+    <!-- <script type="text/javascript" src="js/prefixfree.min.js"> -->
+
+    </script>
+</head>
+<body>
+
+    <!-- 동영상/Background ---------------------------------------->
+    <figure class="video">
+        <video loop="loop" autoplay muted>
+            <source src="img/nike.mp4" title="Background Image">
+        </video>
+    </figure> <!-- /동영상/Background -->
+
+    <!-- Air Nike Logo ---------------------------------------->
+    <h1><img src="img/logo2.png" title="Nike Air Max Logo" alt="Nike Air Max Logo" id="logo"></h1>
+    <!-- /Air Nike Logo -->
+
+    <!-- Header (Global Navigation Bar, GNB) ---------------------------------------->
+    <!-- To reduce Total Overall Cost (TOC), nav should be in its own file -->
+    <header>
+        <ul id="gnb">
+            <li class="on"> <!-- Why use class? we can later use JQuery to move class to other listed item-->
+                <a href="#"><em><i class="fa fa-refresh fa-spin"></i>About</em></a>
+                <ul>
+                    <li><a href="#"><em><b>English</b></em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Brand Info</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Community</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Product Value</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Company History</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+        </ul><!-- /Header (Global Navigation Bar, GNB) -->
+    </header>
+
+    <!--icon----------------------------------------------------------------->
+    <ul id="sns">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+		<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+    </ul>
+
+    <!-- 웹폰트 텍스트박스 -->
+	<section class="txtBox">
+		<p class="txt">Best Qualified<b>AIR MAX</b></p>
+		<p class="tit">50<em>/ 24</em></p>
+	</section>	
+
+    <!-- 하단 컨텐츠박스 -->
+	<section id="side">
+		<div class="con">
+			<p>
+				<em>Event & Community</em>
+				<a href="#"><img src="img/pic1.png" /></a>				
+			</p>
+			<p>
+				<em>News & Notice</em>
+				<a href="#"><img src="img/pic2.png" /></a>				
+			</p>
+			<p>
+				<em>Product Review</em>
+				<a href="#"><img src="img/pic3.png" /></a>				
+			</p>		
+		</div>	
+
+        <!-- animation icon-->
+        <section class="btnContents">
+            <i class="fa fa-angle-double-left"></i>
+            <i class="fa fa-angle-double-left"></i>
+            <i class="fa fa-angle-double-left"></i>
+        </section>  	
+	</section>
+
+
+
+
+</body>
+</html>
