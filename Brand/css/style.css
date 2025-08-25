@@ -9,48 +9,45 @@ body { position:fixed;  width:100%; height:100%; background:#111;}
 
 /* -- 동영상/Background ----------------------------------------*/
 .video {
-    width: 100%;
-    height: 100%;
-    position: fixed;
+    width: 110%;
+    height: 110%;
+    position: absolute;
     top: -60px;
     left: 0px;
-    opacity: 0.9;
-    
+    pointer-events: none;
 }
 
 .video>video{
     width: 100%;
     min-width: 1600px;
-    /* filter: blur(5px); */
 }/*-- /동영상/Background --*/
 
-/* -- Air Nike Logo ----------------------------------------*/
+/* -- Logo ----------------------------------------*/
 #logo{ /* h1 */
     position: fixed;
-    top: 40px;
-    left: 40px;
+    left: 25px;
+    color: white;
+
+    opacity: .8;
     z-index: 10;
-    /* filter: saturate(200%) invert(100%);*/
 }
 
 #logo img{ /* h1 */
-    width: 280px;
-    height: auto;
-}/* -- /Air Nike Logo --*/
+    width: 100px;
+    height: 100px;
+}/* -- /Logo --*/
 
 /* -- Header (Global Navigation Bar, GNB) ----------------------------------------*/
 header{
-    width: 700px;
+    width: 210px;
     height: 100%;
     position: fixed;
-    background: greenyellow;
-    transform: skewX(-40deg);
-    left: -420px;
+    background: linear-gradient(to right,#00bd7d, #00704A );
 }   
 
 /* 1 depth */
 #gnb{
-    width: 220px;
+    width: 200px;
     position: absolute;
     top: 150px;
     right: 0px;
@@ -61,7 +58,7 @@ header{
 }
 #gnb>li>a{
     display:block;
-    width: 220px; 
+    width: 200px; 
     height: 50px;
     font: bold 18px/3 play; 
     color: #222; 
@@ -69,19 +66,14 @@ header{
     padding-right: 40px;
     text-align: right;
 }
-#gnb>li.on>a{ 
-    background: #111;
-    color: #fff;
-}
 
 #gnb>li:hover>a{
-    background: #444;
+    background: #111;
     color: #fff;
 }
 
 #gnb em{
     display: inline-block;
-    transform: skewx(40deg);
 }
 
 #gnb em i{
@@ -95,51 +87,39 @@ header{
     position: absolute; /*자식은 absolute하여 다른 아이들에게 효과가 없게 */
     left: 0px;
     top: 0px;
+    visibility: hidden;
     opacity: 0; /*invisible */
     /* animation is coded into before state. */
     /* we apply transition to all properties that are changing for 0.4 seconds */
-    transition: 0.4s; 
+    transition: 10ms; 
 }
 
 #gnb>li:hover ul{
     opacity: 0.8; /* now visible */
-    left: 205px; /*move left to make it not show up on top of menu*/
+    left: 200px; /*move left to make it not show up on top of menu*/
+    visibility: visible;
 }
 
 /* changing anchor to a box to give form/size */
 #gnb ul a{
     display: block;
-    width: 150px;
+    width: 200px;
     height: 40px;
     background-color: #000;
     text-align: center;
-    border-bottom: 1px solid lawngreen;
+    border-bottom: 3px solid #00704A;
     font: bold 16px/2.5 arial;
     color: #fff;
     box-sizing: border-box;
-    padding-left: 50px;
-    margin-bottom: 3px;
-    transition: 0.5s;
+    /* padding-left: 50px; */
+    transition: 1s;
 }
 
 /* when hovering over anchor */
 #gnb ul a:hover{
-    color: #000;
-    background-color:lawngreen;
+    /* color: #000; */
+    background-color:#00704A;
 }
-
-/* both gnb>li.on & gnb li.on have same result */
-/* #gnb>li.on ul{
-    opacity: 0.8;
-    left: 205px;
-    top: -10px;
-}
-
-#gnb li.on ul a{
-    background-color: black;
-    opacity: 0.7;
-} */
-
 
 /* SNS button location */
 #sns{
@@ -151,38 +131,71 @@ header{
     float: left;
     margin-right: 30px;
 }
-#sns .fa{
+#sns .fa-brands{
     font-size: 30px ;
-    color: yellowgreen;
-    opacity: 0.5;
+    opacity: 0.3;
     transform: scale(1);
     transition: 1s;
 }
-#sns .fa:hover{
+#sns .fa-brands:hover{
     opacity: 1;
-    transform: scale(1.5);
+    transform: scale(1.8);
 }
 
 
 
 /* 텍스트 박스 */
-.txtBox { width:340px; height:280px; position:fixed; top:200px; right:70px; }
-.txt { position:absolute; top:200px; right:0px; font-size:34px; font-family:play; color:#bbb; letter-spacing:-2px;}
-.txt b { font:bold 34px arial; color:#b9fb05; 	margin-left:20px;}
-.tit { position:absolute; top:0px; right:0px; font-size:160px; color:#b9fb05; font-family: 'Monoton', cursive; letter-spacing:-1px;}
-.tit em { font-size:50px; font-family:play; color:#fff;}
+.txtBox { 
+    width:200px; 
+    height:100px; 
+    position:fixed; 
+    bottom:100px; 
+    right:0px; 
+    z-index: 10; 
+    transition: 0.5s;
+}
+.txt { 
+    position:absolute;  
+    font-size:40px; 
+    font-family:play; 
+    color:black; 
+    letter-spacing:-2px;
+}
+.txt b { 
+    font: 80px arial; 
+    color:white;
+    font-family:'Monoton';
+}
+#side:hover .txtBox{
+    opacity: 0;
+    /* Move the textbox out of the way */
+    transform: translatex(200px); 
+}
 
 
 /* contents 레이아웃 */
-#side { width:800px; height:100%; position:fixed; bottom:0px; right:-800px; background:#111; opacity:0.5; transform:skewX(-40deg); transition:all 0.5s;}
-#side:hover { right:-500px; opacity:0.8;}
+#side { 
+    width:300px; 
+    height:400px; 
+    position:fixed; 
+    bottom:-200px; 
+    right:-100px; 
+    background:#00704b6e; 
+    opacity:0.5; 
+    transition:all 1s;
+    border-radius: 30px;
+}
+#side:hover { 
+    right:0px;
+    bottom:0; 
+    opacity:1;
+}
 #side .con{
-    width: 400px;
+    width: 200px;
     height: 100%;
     position: absolute;
     left: 150px;
     bottom: 0px;
-    background: #000;
     box-sizing: border-box;
     padding: 10px;
 }
@@ -198,16 +211,16 @@ header{
     left: 50px;
 }
 #side .con p em{
-    display: inline-block;
+    display: block;
     font: bold 16px/1.7 arial;
-    color: yellowgreen;
-    transform: skewX(40deg);
+    color: #00bd7d;
 }
+
 #side .con p img{
-    width: 300px;
-    height: 70px;
+    width: 200px;
+    height: 125px;
     opacity: 0.3;
-    transition: 0.5s;
+    transition: 0.5s; 
 }
 
 #side .con p img:hover{
@@ -215,42 +228,17 @@ header{
 }
 
 #side .con p:nth-child(1){
-    bottom: 270px;
-    transform: translatex(200px);
-    transition: 0.4s;
+    bottom: 250px;
+    transform: translatex(100px);
+    transition: 1s;
 }
+
 #side .con p:nth-child(2){
-    bottom: 160px;
+    bottom: 100px;
     transform: translatex(200px);
-    transition: 0.8s;
-}
-#side .con p:nth-child(3){
-    bottom: 50px;
-    transform: translatex(200px);
-    transition: 1.2s;
+    transition: 2s;
 }
 
-#side:hover .con p { transform:translateX(0px);}	
-
-/* animation icons */
-#side .btnContents { width:150px; height:50px; position:absolute;  bottom:40px; left:100px; color:#b9fb05;	transform:skewX(40deg); }
-#side:hover .btnContents { left:700px;}	
-.btnContents i { font-size:60px; position:absolute; bottom:0px; right:0px; opacity:0;}
-.btnContents i:nth-child(1){ animation: ani linear 1.5s 0s infinite;}
-.btnContents i:nth-child(2){ animation: ani linear 1.5s 0.5s infinite;}
-.btnContents i:nth-child(3){ animation: ani linear 1.5s 1s infinite;}
-
-
-/*  animation */
-@keyframes ani{
-    0%{
-        right: 0px;
-        transform: scale(1);
-        opacity: 1;
-    }
-    100%{
-        right: 100px;
-        transform: scale(1.5);
-        opacity: 0;
-    }
-}
+#side:hover .con p { 
+    transform:translateX(-50px) translateY(-25px);
+}	
