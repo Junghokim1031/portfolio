@@ -41,23 +41,24 @@
     .slider .slide {
         margin: 0 10px; /* 슬라이드 간 간격 */
         position: relative;
-        height: 700px;
+        height: auto;
     }
 
     /* Caption within image */
-    .slide .caption, 
-    .slide .more{
+    .slide .caption {
+    /* .slide .more{ */
         position: absolute;
     }
     .darker:after {
         content:"";
         position:absolute;
         top:0;
-        bottom:10px;
+        bottom:0px;
         left:0;
         right:0;
         background:linear-gradient(to right, black, transparent);
-        opacity: .5;
+        opacity: .6;
+        border-radius: 5px;
     }
 
     /* Carousel Image */
@@ -69,15 +70,15 @@
 
     /* Caption */
     .slide .caption{
-        left: 80px;
-        top: 200px;
+        left: 10%;
+        top: 30%;
     }
 
     /* Button */
-    .slide .more{
-        left: 80px;
-        top: 325px;
-    }
+    /* .slide .more{
+        left: 10%;
+        top: 55%;
+    } */
 
     /* Caption Color - Both */
     .slide .caption h3,
@@ -170,13 +171,13 @@
         }
 
         .slide .caption{     
-            top: 550px !important;
-            left: 0px !important;
+            top: 525px;
+            left: 0px;
         }
 
         .slide .more{     
-            top: 650px !important;     
-            left: 0px !important;
+            top: 650px;
+            left: 0px;
         }
 
         .slide .more a{
@@ -225,10 +226,11 @@
                 <div class="caption">
                     <h3>코카-콜라와 뷔, <br>이토록 짜릿한 만남!</h3>
                     <p>뷔, 코카-콜라 엠배서더 발탁</p>
-                </div>
-                <div class="more">
+                    <div class="more">
                     <a class="btn btn-primary" href="#">자세히 보기</a>
                 </div>
+                </div>
+
             </div> <!-- /Slide 1-->
 
             <!-- Slide 2 -->
@@ -242,10 +244,11 @@
                 <div class="caption">
                     <h3>짜릿함 가득 해방촌 미식 골목<br>코카-콜라 X 신흥시장</h3>
                     <p>코카-콜라의 짜릿함을 느껴봐!</p>
+                    <div class="more">
+                        <a class="btn btn-primary" href="#">보러 가기</a>
+                    </div>
                 </div>
-                <div class="more">
-                    <a class="btn btn-primary" href="#">보러 가기</a>
-                </div>
+                
             </div> <!-- /Slide 2-->
 
             <!-- Slide 3 -->
@@ -259,10 +262,11 @@
                 <div class="caption">
                     <h3>나의 미식 파트너, 코카콜라<br></h3>
                     <p>오늘을 제대로 즐기기 위해 필요한 건?<br>맛있는 음식, 그리고 어떤 요리도 제대로 살려주는 코카-콜라!</p>
+                    <div class="more">
+                        <a class="btn btn-primary" href="#">Coke & Meal 알아보기</a>
+                    </div>
                 </div>
-                <div class="more">
-                    <a class="btn btn-primary" href="#">Coke & Meal 알아보기</a>
-                </div>
+                
             </div> <!-- /Slide 3-->
 
             <!-- Slide 4 -->
@@ -276,10 +280,11 @@
                 <div class="caption">
                     <h3>코카-콜라 X 신흥시장<br>해방촌 미식 골목에서 찾은 짜릿한 식탁</h3>
                     <p>해방촌 신흥시장 맛집 가이드</p>
+                    <div class="more">
+                        <a class="btn btn-primary" href="#">보러 가기</a>
+                    </div>
                 </div>
-                <div class="more">
-                    <a class="btn btn-primary" href="#">보러 가기</a>
-                </div>
+                
             </div> <!-- /Slide 4-->
 
             <!-- Slide 5 -->
@@ -293,10 +298,11 @@
                 <div class="caption">
                     <h3>코카-콜라 X 블루리본 서베이<br>2025 레드리본 전국의 맛집</h3>
                     <p>나의 미식 파트너, 코카-콜라와 함께하는 짜릿한 미식 생활!</p>
+                    <div class="more">
+                        <a class="btn btn-primary" href="#">보러 가기</a>
+                    </div>
                 </div>
-                <div class="more">
-                    <a class="btn btn-primary" href="#">보러 가기</a>
-                </div>
+                
             </div> <!-- /Slide 5-->
         </div> <!-- /Slider-->
     </div> <!-- /slider-container -->
