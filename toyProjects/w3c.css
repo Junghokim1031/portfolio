@@ -1,0 +1,24 @@
+a{
+    text-decoration: underline;
+}
+a:link{
+    color: black;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    color: black;
+}
+a:active{
+    color: black;
+    background-color: yellow;
+    border: 1ch solid black;
+}
+li{
+    font-weight: bold;
+}
+.right{
+    float: right;
+    margin-left: 15px;
+}
