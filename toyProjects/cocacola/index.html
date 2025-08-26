@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 코카-콜라</title>
+
+    <!-- Favicon --------------------------------------------------------------------------------------------------------------------------------------- --->
+     <link rel="icon" href="img/favicon.png">
+
+     <!-- CSS --------------------------------------------------------------------------------------------------------------------------------------- --->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Bootstrap 5 --------------------------------------------------------------------------------------------------------------------------------------- --->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Slick Slider --------------------------------------------------------------------------------------------------------------------------------------- --->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Remember, this is JQuery -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <!-- Style -->
+    <style>
+    body{
+        background-color: #eee;
+    }
+    /* Carousel Container */
+    .slider-container { 
+        max-width: 1400px;
+        margin: 50px auto;
+    }
+
+    /* Carousel Slider */
+    .slider .slide {
+        margin: 0 10px; /* 슬라이드 간 간격 */
+        position: relative;
+        height: 700px;
+    }
+
+    /* Caption within image */
+    .slide .caption, 
+    .slide .more{
+        position: absolute;
+    }
+    .darker:after {
+        content:"";
+        position:absolute;
+        top:0;
+        bottom:10px;
+        left:0;
+        right:0;
+        background:linear-gradient(to right, black, transparent);
+        opacity: .5;
+    }
+
+    /* Carousel Image */
+    .slider .slide img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    /* Caption */
+    .slide .caption{
+        left: 80px;
+        top: 200px;
+    }
+
+    /* Button */
+    .slide .more{
+        left: 80px;
+        top: 325px;
+    }
+
+    /* Caption Color - Both */
+    .slide .caption h3,
+    .slide .caption p{
+        color: white;
+    }
+
+    /* Caption Title */
+    .caption>h3{
+        font-weight: bold;
+    }
+
+    /* Caption Button */
+    .slide .more .btn{
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        border: none;
+        padding-left: 50px;
+        padding-right: 50px;
+        border-radius: 50px;
+        width: 300px;
+    }
+
+    /* Carousel Image Size */
+    .slider-pc{
+        display: block !important;
+    }
+    .slider-m{
+        display: none !important;
+    }
+
+    /* Pick Related Style --------------------------------------------------------------------------------------------------------------------------------------------- */
+    
+    /* Title Style */
+    #pick>h1{
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    /* Thumbnail box style */
+    .thumbnail{
+        background-color: white;
+        margin-bottom: 30px;
+        border-radius: 5%;
+        text-align: left;
+    }
+    
+    /* Thumbnail's image style */
+    .thumbnail>img{
+        width: 100%;
+        height: 300px;
+        height: auto;
+        padding-bottom: 10px;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+    }
+
+    /* Thumbnail's writing */
+    .thumbnail>p{
+        margin-left: 30px;
+        margin-right: 30px;
+        font-size: 1.3em;
+        font-weight: bolder;
+    }
+
+    /* Thumbnail's link */
+    .thumbnail>a{
+        color: black;
+        font-weight: bold;
+        display: block;
+        padding: 30px;
+
+    }
+    
+    /* Change size --------------------------------------------------------------------------------------------------------------------------------------------- */
+    @media screen and (max-width:767px) {
+        .slide{ text-align: center !important;}
+        .slider .slide img {
+            width: 100%;
+            height: 700px;
+            border-radius: 10px;
+        }
+        .slider-pc{display: none !important;}  
+        .slider-m{display: block !important;}   
+
+        .slide .caption,
+        .slide .more{      
+        width: 100%;
+        }
+
+        .slide .caption{     
+            top: 550px !important;
+            left: 0px !important;
+        }
+
+        .slide .more{     
+            top: 650px !important;     
+            left: 0px !important;
+        }
+
+        .slide .more a{
+            width: 90%;
+        }
+    }
+  </style>
+
+    <!-- Script --------------------------------------------------------------------------------------------------------------------------------------------- --->
+    <script>
+    $(document).ready(function(){
+      $('.slider').slick({
+        centerMode: true,
+        centerPadding: '80px', // 양쪽에 보이는 슬라이드 넓이
+        slidesToShow: 1,
+        arrows: false,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 768, //BELOW 768, 768 is not included
+            // So, If I want to use with mediaQuery, it should be 767 on mediaquery
+            // Bootstrap 5 -> col-md is 768 or greater = desktop so it fits perfectly
+            settings: {
+              centerPadding: '40px',
+            }
+          }
+        ]
+      });
+    });
+  </script>
+</head>
+<body>
+    
+
+    <!-- Slider ---------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div class="slider-container">
+        <div class="slider">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <!-- PC/Mobile Images -->
+                 <div class="darker">
+                    <img class="slider-pc" src="img/slider01.webp" alt="New Coca Cola">
+                    <img class="slider-m" src="img/slider01m.webp" alt="New Coca Cola">
+                </div>
+                <!-- Caption -->
+                <div class="caption">
+                    <h3>코카-콜라와 뷔, <br>이토록 짜릿한 만남!</h3>
+                    <p>뷔, 코카-콜라 엠배서더 발탁</p>
+                </div>
+                <div class="more">
+                    <a class="btn btn-primary" href="#">자세히 보기</a>
+                </div>
+            </div> <!-- /Slide 1-->
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <!-- PC/Mobile Images -->
+                <div class="darker">
+                    <img class="slider-pc" src="img/slider02.webp" alt="신흥시장, 1953">
+                    <img class="slider-m" src="img/slider02m.webp" alt="신흥시장, 1953">
+                </div>
+                <!-- Caption -->
+                <div class="caption">
+                    <h3>짜릿함 가득 해방촌 미식 골목<br>코카-콜라 X 신흥시장</h3>
+                    <p>코카-콜라의 짜릿함을 느껴봐!</p>
+                </div>
+                <div class="more">
+                    <a class="btn btn-primary" href="#">보러 가기</a>
+                </div>
+            </div> <!-- /Slide 2-->
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <!-- PC/Mobile Images -->
+                <div class="darker">
+                    <img class="slider-pc" src="img/slider03.webp" alt="Coca-Cola, 나의 미식 파트너">
+                    <img class="slider-m" src="img/slider03m.webp" alt="Coca-Cola, 나의 미식 파트너">
+                </div>
+                <!-- Caption -->
+                <div class="caption">
+                    <h3>나의 미식 파트너, 코카콜라<br></h3>
+                    <p>오늘을 제대로 즐기기 위해 필요한 건?<br>맛있는 음식, 그리고 어떤 요리도 제대로 살려주는 코카-콜라!</p>
+                </div>
+                <div class="more">
+                    <a class="btn btn-primary" href="#">Coke & Meal 알아보기</a>
+                </div>
+            </div> <!-- /Slide 3-->
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <!-- PC/Mobile Images -->
+                <div class="darker">
+                    <img class="slider-pc" src="img/slider04.webp" alt="Coca-Cola X 신흥시장 건배">
+                    <img class="slider-m" src="img/slider04m.webp" alt="Coca-Cola X 신흥시장 건배">
+                </div>
+                <!-- Caption -->
+                <div class="caption">
+                    <h3>코카-콜라 X 신흥시장<br>해방촌 미식 골목에서 찾은 짜릿한 식탁</h3>
+                    <p>해방촌 신흥시장 맛집 가이드</p>
+                </div>
+                <div class="more">
+                    <a class="btn btn-primary" href="#">보러 가기</a>
+                </div>
+            </div> <!-- /Slide 4-->
+
+            <!-- Slide 5 -->
+            <div class="slide">
+                <!-- PC/Mobile Images -->
+                <div class="darker">
+                    <img class="slider-pc" src="img/slider05.webp" alt="Coca-Cola X Blue Ribbon Survey">
+                    <img class="slider-m" src="img/slider05m.webp" alt="Coca-Cola X Blue Ribbon Survey">
+                </div>
+                <!-- Caption -->
+                <div class="caption">
+                    <h3>코카-콜라 X 블루리본 서베이<br>2025 레드리본 전국의 맛집</h3>
+                    <p>나의 미식 파트너, 코카-콜라와 함께하는 짜릿한 미식 생활!</p>
+                </div>
+                <div class="more">
+                    <a class="btn btn-primary" href="#">보러 가기</a>
+                </div>
+            </div> <!-- /Slide 5-->
+        </div> <!-- /Slider-->
+    </div> <!-- /slider-container -->
+
+    <!-- 이달의 Pick ---------------------------------------------------------------------------------------------------------------------------------------- -->
+     <!-- Container for Pick of the Month -->
+    <div id="pick" class="container text-center">
+        <h1>이달의 Pick</h1>
+        <!-- The single row -->
+        <div class="row ">
+            <!-- Current width change at 768 px, which is md and 3 col, which is 4 -->
+            <!-- Thumbnail 01 -->
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="img/pick01.png" alt="닥터페퍼">
+                    <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>
+                    <a href="#">더 보기<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div><!-- /Thumbnail 01 -->
+
+            <!-- Thumbnail 02 -->
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="img/pick02.png" alt="닥터페퍼">
+                    <p><strong>치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill</strong></p>
+                    <a href="#">더 보기<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div><!-- /Thumbnail 02 -->
+
+            <!-- Thumbnail 03 -->
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="img/pick03.png" alt="닥터페퍼">
+                    <p><strong>달리다 보면 너의 음료를 알게 될 거애, 파워에이드 제로 라임향</strong></p>
+                    <a href="#">더 보기<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div><!-- /Thumbnail 03 -->
+        </div><!-- /row for our pick -->
+    </div> <!-- /Container for Pick of the Month-->
+
+    
+</body>
+</html>

@@ -50,9 +50,16 @@
     /* /GNB */
 
     /* Carousel ---------------------------------------------------------------------------------------------------------- */
-    /* Carousel container  */
+    #myCarousel{
+      width: 100%;
+    }
+    
+    
+    
+    /* Carousel item  */
     #myCarousel .carousel-inner .item{
       height: 700px;
+      width: 100%;
     }
   
     /* Carousel Actual Images */
@@ -65,6 +72,7 @@
     /* Carousel location */
     .carousel-inner{
       /* Positioning carousel-inner as box of caption */
+      width: 100%;
       position: relative;
     }
 
@@ -74,8 +82,9 @@
       position: absolute;
       padding: 0;
       /* Positioning on Top Left */
-      left: -30vw;
+      left: 30px;
       top: 100px;
+      text-align: left;
     }
 
     /* Carousel Caption font size */
@@ -92,10 +101,6 @@
     #subject{
       background: #444;
       color: white;
-    }
-
-    #text{
-      
     }
 
     #subject>.container> {
@@ -251,16 +256,6 @@
         </div>
     </div>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div> <!-- /캐러셀-->
 
 
