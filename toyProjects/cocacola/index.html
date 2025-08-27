@@ -31,6 +31,21 @@
     body{
         background-color: #eee;
     }
+
+    /* Nav Bar ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+    .navbar{
+        background-color: white;
+        height: 80px;
+    }
+    
+    
+    
+    #collapsibleNavbar .dropdown-toggle:hover + .dropdown-menu,
+    #collapsibleNavbar .dropdown-menu:hover{
+        display: block;
+    }
+
+    /* Carousel -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
     /* Carousel Container */
     .slider-container { 
         max-width: 1400px;
@@ -44,11 +59,22 @@
         height: auto;
     }
 
-    /* Caption within image */
-    .slide .caption {
-    /* .slide .more{ */
-        position: absolute;
+    /* Carousel Image */
+    .slider .slide img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
     }
+
+    /* Carousel Image Size */
+    .slider-pc{
+        display: block !important;
+    }
+    .slider-m{
+        display: none !important;
+    }
+
+    /* Carousel Image color correction */
     .darker:after {
         content:"";
         position:absolute;
@@ -61,35 +87,25 @@
         border-radius: 5px;
     }
 
-    /* Carousel Image */
-    .slider .slide img {
-        width: 100%;
-        border-radius: 10px;
-        object-fit: cover;
-    }
-
-    /* Caption */
-    .slide .caption{
+    /* Carousel - Caption within image */
+    .slide .caption {
+    /* .slide .more{ <-- Emergency Code if I take button out of "caption" class */
+        position: absolute;
         left: 10%;
         top: 30%;
+        color: white;
     }
 
-    /* Button */
+    /* Caption Title Formatting */
+    .caption>h3{
+        font-weight: bold;
+    }
+
+    /* Button <-- Emergency Code if I take button out of "caption" class */
     /* .slide .more{
         left: 10%;
         top: 55%;
     } */
-
-    /* Caption Color - Both */
-    .slide .caption h3,
-    .slide .caption p{
-        color: white;
-    }
-
-    /* Caption Title */
-    .caption>h3{
-        font-weight: bold;
-    }
 
     /* Caption Button */
     .slide .more .btn{
@@ -103,34 +119,28 @@
         width: 300px;
     }
 
-    /* Carousel Image Size */
-    .slider-pc{
-        display: block !important;
-    }
-    .slider-m{
-        display: none !important;
-    }
+
+
 
     /* Pick Related Style --------------------------------------------------------------------------------------------------------------------------------------------- */
-    
-    /* Title Style */
+    /* Pick Title Formatting */
     #pick>h1{
         font-weight: bold;
         margin-bottom: 30px;
     }
 
-    /* Thumbnail box style */
+    /* Thumbnail box formatting */
     .thumbnail{
         background-color: white;
         margin-bottom: 30px;
         border-radius: 5%;
+        height: 500px;
         text-align: left;
     }
     
     /* Thumbnail's image style */
     .thumbnail>img{
         width: 100%;
-        height: 300px;
         height: auto;
         padding-bottom: 10px;
         border-top-left-radius: 5%;
@@ -153,7 +163,106 @@
         padding: 30px;
 
     }
+
+
+
+
+    /* Story related CSS ---------------------------------------------------------------------------------------------------------------------------------------------*/
+    /* Container top padding */
+    #story, #tomorrow{
+        /* Debugging */
+        /* background-color: blue; */
+        padding-top: 30px;
+        padding-bottom: 50px;
+        position: relative;
+    }
+
+    /* col-md-6 style */
+    #story .col-md-6,
+    #tomorrow .col-md-6{
+        background-color: white;
+        border-radius: 10px !important;
+        padding: 0px;
+        /* position: absolute; */
+    }
+
+    /* Story-image */
+    #story .col-md-6 img,
+    #tomorrow .col-md-6 img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    /* col-md-6>writing formatting */
+    #story .writing,
+    #tomorrow .writing{
+        padding: 60px;
+    }
+
+    /* #story and #tomorrow Title Formatting */
+    .writing>h3{
+        font-weight: bold;
+    }
+
+    /* col-md-6 자세히 보기 button positioning */
+    .writing>div{
+        text-align: center;
+        vertical-align: bottom;
+    }
     
+    /* col-md-6 자세히 보기 formatting */
+    .writing .btn{
+        width: 60%;
+        border-radius: 20px;
+    }
+
+    
+    #story .col-md-6:nth-child(1) {
+        /* top: 50px !important;
+        left: 10% !important; */
+        /* z-index: 1; */
+    }
+    #story .col-md-6:nth-child(2) {
+        /* top: 150px !important;
+        left: 40% !important; */
+    }
+
+
+    /* Brand-related CSS */
+    /* Brand Title Formatting */
+    #brand>h1 {
+        margin-top: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+    /* Brand Box Formatting */
+    #brand .col-md-4{
+        background-color: white;
+        box-sizing: border-box;
+        border: 20px solid #eee;
+        transition: 1s;
+        text-align: center;
+        gap: 30px;
+    }
+
+    /* Brand Image Formatting */
+    #brand .col-md-4 img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Brand Image Hover Formatting */
+    #brand .col-md-4:hover{
+        transform:scale(1.05)
+    }
+
+    #brand>a{
+        margin-top: 30px;
+        width: 100%;
+        border-radius: 50px;
+    }
+
     /* Change size --------------------------------------------------------------------------------------------------------------------------------------------- */
     @media screen and (max-width:767px) {
         .slide{ text-align: center !important;}
@@ -175,7 +284,7 @@
             left: 0px;
         }
 
-        .slide .more{     
+        .slide .more{  
             top: 650px;
             left: 0px;
         }
@@ -183,6 +292,52 @@
         .slide .more a{
             width: 90%;
         }
+
+        
+        .thumbnail{
+            height: 100%;
+        }
+
+        /* col-md-6 자세히 보기 formatting */
+        .writing .btn{
+            width: 100%;
+            border-radius: 20px;
+        }
+        
+    }
+
+    /* Footer */
+    footer.container-fluid{
+        margin-top: 30px;
+        padding-top: 100px;
+        background-color: black;
+        min-height: 400px;
+    }
+    footer ul{
+        list-style: none;
+        opacity: 1;
+        color: gray;
+        font-size: 0.5em;
+    }
+    footer ul li{
+        color: white;
+        font-size: 2em;
+    }
+
+    footer div div div i{
+        opacity: 1;
+        color: white;
+        border: 1px solid white;
+        border-radius: 50%;
+        font-size: 1.5em;
+        padding: 1%;
+    }
+
+    footer div div p{
+        margin-top: 30px;
+        opacity: 1;
+        color: white;
+        text-align: right;
     }
   </style>
 
@@ -211,6 +366,43 @@
 </head>
 <body>
     
+    <!-- NavBar ---------------------------------------------------------------------------------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/logo-black.svg"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>  
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Brand</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our Company</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Coca-Cola Company</a></li>
+                        <li><a class="dropdown-item" href="#">Since 1886</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Discover</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Brand Story</a></li>
+                        <li><a class="dropdown-item" href="#">Coke & Meal</a></li>
+                        <li><a class="dropdown-item" href="#">Originals</a></li>
+                        <li><a class="dropdown-item" href="#">Opener</a></li>
+                        <li><a class="dropdown-item" href="#">Creations</a></li>
+                        <li><a class="dropdown-item" href="#">CokePLAY App</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sustainability</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Slider ---------------------------------------------------------------------------------------------------------------------------------------- -->
     <div class="slider-container">
@@ -312,7 +504,7 @@
     <div id="pick" class="container text-center">
         <h1>이달의 Pick</h1>
         <!-- The single row -->
-        <div class="row ">
+        <div class="row d-flex align-items-stretch">
             <!-- Current width change at 768 px, which is md and 3 col, which is 4 -->
             <!-- Thumbnail 01 -->
             <div class="col-md-4">
@@ -336,13 +528,118 @@
             <div class="col-md-4">
                 <div class="thumbnail">
                     <img src="img/pick03.png" alt="닥터페퍼">
-                    <p><strong>달리다 보면 너의 음료를 알게 될 거애, 파워에이드 제로 라임향</strong></p>
+                    <p><strong>달리다 보면 너의 음료를 알게 될 거야, 파워에이드 제로 라임향</strong></p>
                     <a href="#">더 보기<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div><!-- /Thumbnail 03 -->
         </div><!-- /row for our pick -->
     </div> <!-- /Container for Pick of the Month-->
 
+    <!-- Story ------------------------------------------------------------------------------------------------------------------------------------------->
+    <div id="story" class="container">
+        <div class="row">
+            <div class="col-md-6 writing order-md-1">
+                <h3>코카-콜라 Real Magic 스토리</h3>
+                <p>
+                    1886년 탄생 이후, 코카-콜라가 걸어온 130여 년의 짜릿한 여정! 그 마법같은 이야기 속으로 초대합니다.
+                </p>
+                <div>
+                    <a class="btn btn-outline-dark" href="#">자세히 보기</a>
+                </div>
+            </div>
+            <div class="col-md-6 order-md-2">
+                <img src="img/story01.webp" alt="코카콜라 Real Magic">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Tomorrow ------------------------------------------------------------------------------------------------------------------------------------------->
+    <div id="tomorrow" class="container">
+        <div class="row">            
+            <div class="col-md-6 writing order-md-2">
+                <h3>지속 가능한 미래</h3>
+                <p>
+                    지속 가능한 미래를 만들기 위한 코카-콜라의 다양한 활동들을 만나보세요. 전 세계 사람들의 삶과 지역사회에 긍정적인 변화를 만들어 나가기 위해 노력하고 있습니다.
+                </p>
+                <div>
+                    <a class="btn btn-outline-dark" href="#">자세히 보기</a>
+                </div>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <img src="img/story02.webp" alt="코카콜라 Real Magic">                
+            </div>
+        </div>
+    </div> <!-- end tmr-->
     
+
+    <!-- Brands -->
+     <div id="brand" class="container">
+        <h1>브랜드 살펴보기</h1>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <img src="img/brand01.webp" alt="Coca-Cola">
+            </div>
+            <div class="col-md-4">
+                <img src="img/brand02.webp" alt="Sprite">
+            </div>
+            <div class="col-md-4">
+                <img src="img/brand03.webp" alt="Fanta">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="img/brand04.webp" alt="Dr-Pepper">
+            </div>
+            <div class="col-md-4">
+                <img src="img/brand05.webp" alt="Power-ade">
+            </div>
+            <div class="col-md-4">
+                <img src="img/brand06.webp" alt="Georgia Coffee">
+            </div>
+        </div>
+        <a class="btn btn-outline-dark" href="#">자세히 보기</a>
+     </div>
+
+
+     <!-- Footer -->
+      <footer class="container-fluid">
+        <div class="container">
+            <img src="img/logo-white-large.svg" alt="Coca-Cola Company Logo">
+            <hr style="border: 1px solid white; opacity: 1">
+            <div class="row">
+                <div class="col-md-2">
+                    <ul>소개
+                        <li>기업 소개</li>
+                        <li>히스토리</li>
+                        <li>채용</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul>도움이 필요하세요?
+                        <li>사이트 맵</li>
+                        <li>고객 안내</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>법적고지
+                        <li>이용 약관</li>
+                        <li>쿠키 정책</li>
+                        <li>쿠키 설정</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+            </div>
+            <hr style="border: 1px solid white; opacity: 1">
+            <div class="copyright">
+                <p><b>&copy; 2024 The Coca‑Cola Company. 판권 소유</b></p>
+            </div>
+        </div>
+      </footer>
 </body>
 </html>

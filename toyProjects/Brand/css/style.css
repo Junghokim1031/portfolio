@@ -1,5 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Play);
-@import url(http://fonts.googleapis.com/css?family=Monoton);
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Manrope:wght@200..800&display=swap');
 
 /*    Reset CSS  */
 * { margin:0;  padding:0; }
@@ -60,7 +59,7 @@ header{
     display:block;
     width: 200px; 
     height: 50px;
-    font: bold 18px/3 play; 
+    font: bold 18px/3 "Manrope"; 
     color: #222; 
     box-sizing: border-box;
     padding-right: 40px;
@@ -164,7 +163,7 @@ header{
 .txt b { 
     font: 80px arial; 
     color:white;
-    font-family:'Monoton';
+    font-family:'Galada';
 }
 #side:hover .txtBox{
     opacity: 0;
