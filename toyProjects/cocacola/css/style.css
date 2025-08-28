@@ -1,0 +1,528 @@
+
+    body{
+        background-color: #eee !important;
+    }
+
+    /* Nav Bar ============================================================================================================================================= */
+    /* navbar formatting */
+    .navbar{
+        background-color: white;
+        /* height is declared here ensure size doesn't change due to auto
+        without declaring it here, the navbar and nav-item>a height differs */
+        height: 80px;
+    }
+
+    /* gnb switch with mediaQuery */
+    #collapsibleNavbar{display: block !important;}
+    #collapsibleNavbar-m{display: none !important;}
+
+    /* navbar > nav-item > a (Menu) */
+    #collapsibleNavbar .nav-item>a{
+        font-weight: bolder;
+        height: 80px;
+        align-content: center;
+        color: black;
+    }
+
+    /* navbar > nav-item hover -> underline */
+    #collapsibleNavbar .nav-item:hover>a{
+        border-bottom: 4px solid black
+    }
+
+    /* navbar > nav-item hover > subMenu */
+    #collapsibleNavbar .nav-item:hover .dropdown-menu{
+        display: block;
+    }
+
+    /* navbar > nav-item > subMenu format */
+    #collapsibleNavbar .nav-item .dropdown-menu{
+        border-radius: 0px;
+        border: none;
+    }
+
+    /* navbar > nav-item > subMenu > subMenuItem format */
+    #collapsibleNavbar .nav-item .dropdown-menu .dropdown-item{
+        font-size: .8em;
+    }
+
+    /* navbar > nav-item > subMenu hover > format */
+    #collapsibleNavbar .nav-item .dropdown-menu .dropdown-item:hover{
+        /* when hovering, ensure font becomes bold */
+        font-weight: bold;
+        /* 이것이 없으면 hover 시 회색이 존재함.
+        Realign bg color to white when hovering */
+        background-color: white;
+    }
+
+    /* navbar > nav-item > subMenu hover > format */
+    #collapsibleNavbar .nav-item .dropdown-menu .dropdown-item:hover::after {
+        /* Reformatted with AI using <i> does not work with content */
+        content: " \f054"; /* Unicode for FontAwesome's chevron-right */
+        font-family: "Font Awesome 5 Free"; /* or the correct Font Awesome font */
+        font-weight: bold; /* necessary for solid style */
+        margin-left: 5px; /* space between text and chevron */
+    }
+
+    #collapsibleNavbar .nav-item .dropdown-toggle::after{
+        border: 0px;
+    }
+
+    
+
+    /* Menu > animation */
+    #collapsibleNavbar .nav-item i {
+        transform: rotate(0deg);
+        transition-duration: 0.5s;
+    }
+
+    /* Menu > animation > hover */
+    #collapsibleNavbar .nav-item:hover i {
+        transform: rotate(90deg);
+    }
+
+    
+
+    /* Carousel ================================================================================================================================ */
+    /* Carousel Container */
+    .slider-container { 
+        max-width: 1400px;
+        margin: 50px auto;
+    }
+
+    /* Carousel Slider */
+    .slider .slide {
+        margin: 0 10px; /* 슬라이드 간 간격 */
+        position: relative;
+        height: auto;
+    }
+
+    /* Carousel Image */
+    .slider .slide img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    /* Carousel Image mediaQuery */
+    .slider-pc{
+        display: block !important;
+    }
+    .slider-m{
+        display: none !important;
+    }
+
+    /* Carousel Image color correction */
+    .darker:after {
+        content:"";
+        position: absolute;
+        top:0;
+        bottom:0px;
+        left:0;
+        right:0;
+        background:linear-gradient(to right, black, transparent);
+        opacity: .6;
+        border-radius: 5px;
+    }
+
+    /* Carousel - Caption within image */
+    .slide .caption {
+        position: absolute;
+        left: 10%;
+        top: 30%;
+        color: white;
+    }
+
+    /* Caption Title Formatting */
+    .caption>h3{
+        font-weight: bold;
+    }
+
+    /* Caption Button */
+    .slide .more .btn{
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        border: none;
+        padding-left: 50px;
+        padding-right: 50px;
+        border-radius: 50px;
+        width: 300px;
+    }
+
+    
+
+
+
+
+    /* Pick Related Style ===================================================================================================================== */
+    /* Pick Title Formatting */
+    #pick>h1{
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    /* Thumbnail box formatting */
+    .thumbnail{
+        background-color: white;
+        margin-bottom: 30px;
+        border-radius: 5%;
+        height: 500px;
+        text-align: left;
+    }
+    
+    /* Thumbnail's image style */
+    .thumbnail>img{
+        width: 100%;
+        height: auto;
+        padding-bottom: 10px;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+    }
+
+    /* Thumbnail's writing */
+    .thumbnail>p{
+        margin-left: 30px;
+        margin-right: 30px;
+        font-size: 1.3em;
+        font-weight: bolder;
+    }
+
+    /* Thumbnail's link */
+    .thumbnail>a{
+        color: black;
+        font-weight: bold;
+        display: block;
+        padding: 30px;
+
+    }
+
+
+
+
+    /* Story related CSS ======================================================================================================================== */
+    /* Container top padding */
+    #story, #tomorrow{
+        /* Debugging */
+        /* background-color: blue; */
+        padding-top: 30px;
+        padding-bottom: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    /* col-md-6 style */
+    #story .col-md-6,
+    #tomorrow .col-md-6{
+        background-color: white;
+        border-radius: 10px !important;
+        padding: 0px;
+        /* The boxes are 500px */
+        height: 500px;
+    }
+
+    /* Story-image */
+    #story .col-md-6 img,
+    #tomorrow .col-md-6 img{
+        width: 115%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    #story .row,
+    #tomorrow .row{
+        display: flex !important;
+        align-items: center !important;
+        /* background-color: green; */
+        /* The container is 600 px  */
+        height: 600px;
+    }
+
+    /* col-md-6>writing formatting */
+    
+
+    #story .writing,
+    #tomorrow .writing{
+        padding: 60px;
+    }
+
+    /* #story and #tomorrow Title Formatting */
+    .writing>h3{
+        font-weight: bold;
+    }
+
+    /* col-md-6 자세히 보기 button positioning */
+    .writing>div{
+        text-align: center;
+        vertical-align: bottom;
+    }
+    
+    /* col-md-6 자세히 보기 formatting */
+    .writing .btn{
+        width: 60%;
+        border-radius: 20px;
+    }
+
+    
+    #story .col-md-6:nth-child(1),
+    #tomorrow .col-md-6:nth-child(1) {
+        align-self: flex-start !important;
+    }
+    #story .col-md-6:nth-child(2),
+    #tomorrow .col-md-6:nth-child(2) {
+        align-self: flex-end !important;
+    }
+
+    #story .col-md-6:nth-child(1){
+        margin-right: -75px !important;
+        z-index: 1; 
+    }
+
+    #tomorrow .col-md-6:nth-child(1){
+        margin-right: -100px !important; 
+        z-index: 1;
+    }
+    
+
+
+    /* Brand-related CSS================================================================================= */
+    /* Brand Title Formatting */
+    #brand>h1 {
+        margin-top: 30px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    #brand>.row{
+        justify-content: center;
+    }
+
+    /* Brand Box Formatting */
+    #brand .col-md-4{
+        /* sizing */
+        width: 230px;
+        height: 230px;
+        background-color: white;
+        box-sizing: border-box;
+        border: 1px solid black;
+        margin: 10px;
+        border-radius: 10px;
+        transition: 1s;
+        text-align: center;
+    }
+
+    /* Brand Image Formatting */
+    #brand .col-md-4 img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 20px !important;
+    }
+    
+    /* Brand Image Hover Formatting */
+    #brand .col-md-4:hover{
+        transform:scale(1.05)
+    }
+
+    #brand>a{
+        margin-top: 30px;
+        width: 100%;
+        border-radius: 50px;
+    }
+
+    /* Change size --------------------------------------------------------------------------------------------------------------------------------------------- */
+    @media screen and (max-width:767px) {
+        /* gnb */
+        /* #collapsibleNavbar{
+            position: fixed !important;
+            width: 100%;
+            height: 100% ;
+            background-color: white;
+            z-index: 10 ;
+            top: 0;
+            left: 0;
+        } */
+        #collapsibleNavbar{ display: hidden !important;}
+        #collapsibleNavbar-m{ display: block !important;}
+
+        #collapsibleNavbar-m{
+            position: fixed !important;
+            width: 100%;
+            height: 100% ;
+            background-color: white;
+            z-index: 10 ;
+            top: 0;
+            left: 0;
+        }
+        
+        .slide{ text-align: center !important;}
+        .slider .slide img {
+            width: 100%;
+            height: 700px;
+            border-radius: 10px;
+        }
+        .slider-pc{display: none !important;}  
+        .slider-m{display: block !important;}   
+
+        .slide .caption,
+        .slide .more{      
+            width: 100%;
+        }
+
+        .slide .caption{     
+            top: 525px;
+            left: 0px;
+        }
+
+        .slide .more{  
+            top: 650px;
+            left: 0px;
+        }
+
+        .slide .more a{
+            width: 90%;
+        }
+
+        
+        .thumbnail{
+            height: 100%;
+        }
+
+        #story, #tomorrow{
+            /* Debugging */
+            /* background-color: blue; */
+            padding-top: 0px;
+            padding-bottom: 0px;
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+
+        #story .row,
+        #tomorrow .row{
+            display: flex !important;
+            align-items: center !important;
+            background-color: green;
+            /* The container is 600 px  */
+            height: 500px;
+        }
+
+        /* col-md-6 자세히 보기 formatting */
+        .writing .btn{
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        /* col-md-6 style */
+        #story .col-md-6,
+        #tomorrow .col-md-6{
+            background-color: white;
+            border-radius: 20px !important;
+            padding: 0px;
+            height: auto;
+        }
+
+        /* Story-image */
+        #story .col-md-6 img,
+        #tomorrow .col-md-6 img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        
+        #story .col-md-6:nth-child(1),
+        #tomorrow .col-md-6:nth-child(1){  
+            margin-right: 0 !important;   
+            width: 90%;
+            z-index: 1; 
+        }
+        #story .row,
+        #tomorrow .row{
+            justify-content: center;
+        }
+
+        #story .col-md-6:nth-child(2),
+        #tomorrow .col-md-6:nth-child(2){
+            margin-top: -100px !important;
+            z-index: 0; 
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    
+    }
+
+    /* Footer */
+    footer.container-fluid{
+        margin-top: 30px;
+        padding-top: 100px;
+        background-color: black;
+        min-height: 400px;
+    }
+    footer ul{
+        list-style: none;
+        opacity: 1;
+        color: gray;
+        font-size: 0.5em;
+    }
+    footer ul li{
+        color: white;
+        font-size: 2em;
+    }
+
+    footer div div div i{
+        opacity: 1;
+        color: white;
+        border: 1px solid white;
+        border-radius: 50%;
+        font-size: 1.5em;
+        padding: 1%;
+    }
+
+    footer div div p{
+        margin-top: 30px;
+        opacity: 1;
+        color: white;
+        text-align: right;
+    }
+    
+    /*  
+    @keyframes animation01 {
+        0%{transform: rotate(0deg);}
+        100%{transform: rotate(90deg);}
+    }    */
