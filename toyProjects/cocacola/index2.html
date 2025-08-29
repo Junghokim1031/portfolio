@@ -27,45 +27,30 @@
     <!-- Script --------------------------------------------------------------------------------------------------------------------------------------------- --->
     <script>
     $(document).ready(function(){
-        $('#slider .slider').slick({
-            centerMode: true,
-            centerPadding: '80px', // 양쪽에 보이는 슬라이드 넓이
-            slidesToShow: 1,
-            arrows: false,
-            dots: true,
-            responsive: [
-                {
-                breakpoint: 768,
-                settings: {
-                    centerPadding: '40px',
-                }
-                }
-            ]
-        });
-
-        $('#month-pick .slider').slick({
-            centerMode: true,
-            centerPadding: '0px', // 양쪽에 보이는 슬라이드 넓이
-            slidesToShow: 3,
-            arrows: false,
-            dots: true,
-            responsive: [
-                {
-                breakpoint: 768,
-                settings: {
-                    centerPadding: '40px',
-                    slidesToShow: 1,
-                }
-                }
-            ]
-        });
+      $('.slider').slick({
+        centerMode: true,
+        centerPadding: '80px', // 양쪽에 보이는 슬라이드 넓이
+        slidesToShow: 1,
+        arrows: false,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 768, //BELOW 768, 768 is not included
+            // So, If I want to use with mediaQuery, it should be 767 on mediaquery
+            // Bootstrap 5 -> col-md is 768 or greater = desktop so it fits perfectly
+            settings: {
+              centerPadding: '40px',
+            }
+          }
+        ]
+      });
     });
   </script>
 </head>
 <body>
     
     <!-- NavBar ---------------------------------------------------------------------------------------------------------------------------------------- -->
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-sm">
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand" href="#"><img src="img/logo-black.svg" alt="Coca-Cola Logo"></a>
@@ -112,7 +97,6 @@
                 <div style="text-align: right;">
                     <a href="#" class="btn" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar-m">&times;</a>
                 </div><!-- /Exit Menu -->
-                <button class="accordion">Brand</button>
                 <button class="accordion">Our Company</button>
                 <div class="panel">
                     <a class="dropdown-item" href="#">Coca-Cola Company</a>
@@ -128,10 +112,18 @@
                     <a class="dropdown-item" href="#">CokePLAY App</a>
                 </div>
 
-                <button class="accordion">Sustainability</button>
+                <button class="accordion">Section 3</button>
+                <div class="panel">
+                <p> data 2</p>
+                </div>
+
+                <button class="accordion">Section 4</button>
+                <div class="panel">
+                <p> data 2</p>
+                </div>
 
                 <script>
-                    var acc = document.getElementsByid("collapsibleNavbar-m");
+                    var acc = document.getElementsByClassName("accordion");
                     var i;
 
                     for (i = 0; i < acc.length; i++) {
@@ -167,7 +159,7 @@
     
 
     <!-- Slider ---------------------------------------------------------------------------------------------------------------------------------------- -->
-    <div id="slider" class="slider-container">
+    <div class="slider-container">
         <div class="slider">
             <!-- Slide 1 -->
             <div class="slide">
@@ -261,33 +253,41 @@
         </div> <!-- /Slider-->  
     </div> <!-- /slider-container -->
 
-    <!-- 이달의 pick ---------------------------------------------------------------------------------------------------------------------------------------- -->
-    <div id="month-pick" class="slider-container">
-        <h1>이달의 PICK</h1>
-        <div class="row slider">
-        <div class="col-md-4 slide">
-            <div class="thumbnail">
-                <img src="img/pick01.png" alt="닥터페퍼제로">
-                <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>          
-                <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </div>
-        <div class="col-md-4 slide">
-            <div class="thumbnail">
-                <img src="img/pick02.png" alt="스프라이트제로">
-                <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>          
-                <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </div>
-        <div class="col-md-4 slide">
-            <div class="thumbnail">
-                <img src="img/pick03.png" alt="파이웨이드제로">
-                <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>          
-                <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
-            </div>        
-        </div>
-        </div>
-    </div>
+    <!-- 이달의 Pick ---------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Container for Pick of the Month -->
+    <div id="pick" class="container text-center">
+        <h1>이달의 Pick</h1>
+        <!-- The single row -->
+        <div class="row d-flex align-items-stretch">
+            <!-- Current width change at 768 px, which is md and 3 col, which is 4 -->
+            <!-- Thumbnail 01 -->
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="img/pick01.png" alt="닥터페퍼">
+                    <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>
+                    <a href="#">더 보기<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div><!-- /Thumbnail 01 -->
+
+            <!-- Thumbnail 02 -->
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="img/pick02.png" alt="닥터페퍼">
+                    <p><strong>치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill</strong></p>
+                    <a href="#">더 보기<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div><!-- /Thumbnail 02 -->
+
+            <!-- Thumbnail 03 -->
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="img/pick03.png" alt="닥터페퍼">
+                    <p><strong>달리다 보면 너의 음료를 알게 될 거야, 파워에이드 제로 라임향</strong></p>
+                    <a href="#">더 보기<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div><!-- /Thumbnail 03 -->
+        </div><!-- /row for our pick -->
+    </div> <!-- /Container for Pick of the Month-->
 
     <!-- Story ------------------------------------------------------------------------------------------------------------------------------------------->
     <div id="story" class="container">
@@ -310,7 +310,7 @@
 
     <!-- Tomorrow ------------------------------------------------------------------------------------------------------------------------------------------->
     <div id="tomorrow" class="container">
-        <div class="row">
+        <div class="row">            
             <div class="col-md-6 writing order-md-2">
                 <h3>지속 가능한 미래</h3>
                 <p>
@@ -354,116 +354,46 @@
         </div>
         <a class="btn btn-outline-dark" href="#">자세히 보기</a>
      </div>
-     <div id="brand-m" class="container">
-        <h1>브랜드 살펴보기</h1>
-        <div class="row">
-            <div class="col">
-                <img src="img/brand01.webp" alt="Coca-Cola">
-            </div>
-            <div class="col">
-                <img src="img/brand02.webp" alt="Sprite">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <img src="img/brand03.webp" alt="Fanta">
-            </div>
-            <div class="col">
-                <img src="img/brand04.webp" alt="Dr-Pepper">
-            </div>
-        </div>        
-        <div class="row">
-            <div class="col">
-                <img src="img/brand05.webp" alt="Powerade">
-            </div>
-            <div class="col">
-                <img src="img/brand06.webp" alt="Georgia Coffee">
-            </div>
-        </div>
-        <a class="btn btn-outline-dark" href="#">자세히 보기</a>
-     </div>
 
 
      <!-- Footer -->
-      <footer  class="container-fluid">
-            <div class="container">
-                <img src="img/logo-white-large.svg" alt="Coca-Cola Company Logo">
-                <hr style="border: 1px solid white; opacity: 1">
-                <div id="footer-pc" class="row">
-                    <div class="col-md-2">
-                        <ul>소개
-                            <li>기업 소개</li>
-                            <li>히스토리</li>
-                            <li>채용</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <ul>도움이 필요하세요?
-                            <li>사이트 맵</li>
-                            <li>고객 안내</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul>법적고지
-                            <li>이용 약관</li>
-                            <li>쿠키 정책</li>
-                            <li>쿠키 설정</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <i class="fa-brands fa-youtube"></i>
-                        <i class="fa-brands fa-x-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-facebook"></i>
-                    </div>
+      <footer class="container-fluid">
+        <div class="container">
+            <img src="img/logo-white-large.svg" alt="Coca-Cola Company Logo">
+            <hr style="border: 1px solid white; opacity: 1">
+            <div class="row">
+                <div class="col-md-2">
+                    <ul>소개
+                        <li>기업 소개</li>
+                        <li>히스토리</li>
+                        <li>채용</li>
+                    </ul>
                 </div>
-                <!-- mobile footer -->
-                <div id="footer-m">
-                    <button class="accordion">소개</button>
-                    <div class="panel">
-                        <p>기업 소개</p>
-                        <p>히스토리</p>
-                        <p>채용</p>
-                    </div>
-
-                    <button class="accordion">도움이 필요하세요?</button>
-                    <div class="panel">
-                        <p>사이트 맵</p>
-                        <p>고객 안내</p>
-                    </div>
-
-                    <button class="accordion">법적고지</button>
-                    <div class="panel">
-                        <p>이용 약관</p>
-                        <p>쿠키 정책</p>
-                        <p>쿠키 설정</p>
-                    </div>
-
-                    <script>
-                        var acc = document.getElementsByClassName("accordion");
-                        var i;
-
-                        for (i = 0; i < acc.length; i++) {
-                            acc[i].addEventListener("click", function() {
-                            this.classList.toggle("active");
-                            var panel = this.nextElementSibling;
-                            if (panel.style.maxHeight) {
-                            panel.style.maxHeight = null;
-                            } else {
-                            panel.style.maxHeight = panel.scrollHeight + "px";
-                            } 
-                        });
-                        }
-                    </script>
+                <div class="col-md-2">
+                    <ul>도움이 필요하세요?
+                        <li>사이트 맵</li>
+                        <li>고객 안내</li>
+                    </ul>
                 </div>
-
-                <hr style="border: 1px solid white; opacity: 1">
-                <div class="copyright">
-                    <p><b>&copy; 2024 The Coca‑Cola Company. 판권 소유</b></p>
+                <div class="col-md-6">
+                    <ul>법적고지
+                        <li>이용 약관</li>
+                        <li>쿠키 정책</li>
+                        <li>쿠키 설정</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
                 </div>
             </div>
-
-            
-        </footer>
+            <hr style="border: 1px solid white; opacity: 1">
+            <div class="copyright">
+                <p><b>&copy; 2024 The Coca‑Cola Company. 판권 소유</b></p>
+            </div>
+        </div>
+      </footer>
 </body>
 </html>
