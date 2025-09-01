@@ -3,7 +3,10 @@
         background-color: #eee !important;
     }
 
-    /* Nav Bar ============================================================================================================================================= */
+
+    /* ============================================================================================================================
+    navBar==========================================================================================================================
+    ============================================================================================================================= */
     /* navbar formatting */
     .navbar{
         background-color: white;
@@ -83,7 +86,9 @@
 
 
 
-    /* Carousel ================================================================================================================================ */
+    /* ============================================================================================================================
+    Carousel ==========================================================================================================================
+    ============================================================================================================================= */
     /* Carousel Container */
     .slider-container { 
         max-width: 1400px;
@@ -155,7 +160,9 @@
 
 
 
-    /* Pick Related Style ===================================================================================================================== */
+    /* ============================================================================================================================
+    Pick==========================================================================================================================
+    ============================================================================================================================= */
     /* Pick Title Formatting */
     
     
@@ -205,7 +212,9 @@
 
 
 
-    /* Story related CSS ======================================================================================================================== */
+    /* ============================================================================================================================
+    Story ==========================================================================================================================
+    ============================================================================================================================= */
     /* Container top padding */
     #story, #tomorrow{
         /* Debugging */
@@ -290,7 +299,9 @@
     
 
 
-    /* Brand-related CSS================================================================================= */
+    /* ============================================================================================================================
+    Brand==========================================================================================================================
+    ============================================================================================================================= */
     #brand-m{display:none !important;}
     
     #brand,
@@ -348,9 +359,12 @@
         border-radius: 50px;
     }
 
-    /* Change size @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+    /* ============================================================================================================================
+    mediaQuery 
+    ============================================================================================================================= */
     @media screen and (max-width:767px) {
 
+        
         /* Another way to ensure logo and hamburger menu is in navbar (white) */
         /* nav .container {
             padding: 0 10px !important;
@@ -366,6 +380,9 @@
             left: 0;
         } */
 
+        /* ============================================================================================================================
+        gnb 
+        ============================================================================================================================= */
         #collapsibleNavbar-m{ opacity: 1 !important;}
 
         #collapsibleNavbar-m{
@@ -377,7 +394,25 @@
             top: 0;
             left: 0;
         }
+
+        #collapsibleNavbar-m .accordion:after {
+            content: "\f054"; /* Unicode for FontAwesome's angle-right */
+            font-family: "Font Awesome 5 Free"; /* or the correct Font Awesome font */
+            font-weight: bold; /* necessary for solid style */
+            margin-left: 5px; /* space between text and chevron */
+            color: #777;
+            float: right;
+        }       
+
+        #collapsibleNavbar-m .active:after {
+            content: "\f078";  /* Unicode for FontAwesome's angle-down */
+        }
+
+
         
+        /* ============================================================================================================================
+        gnb 
+        ============================================================================================================================= */
         .slide{ text-align: center !important;}
         .slider .slide img {
             width: 100%;
@@ -406,7 +441,9 @@
             width: 90%;
         }
 
-        /* Pick CSS =========================================================================================================== */
+        /* ============================================================================================================================
+        Month's pick 
+        ============================================================================================================================= */
         #month-pick .thumbnail{
             background: white;
         }
@@ -418,8 +455,9 @@
         #month-pick{
         padding: 0 0px;
     }
-        /* Story and Tomorrow CSS ============================================================================================= */
-
+        /* ============================================================================================================================
+        Story & Tomorrow
+        ============================================================================================================================= */
         #story, #tomorrow{
             /* Debugging */
             /* background-color: blue; */
@@ -427,6 +465,13 @@
             padding-bottom: 0px;
             margin-top: 0px;
             margin-bottom: 150px;
+        }
+
+        #story.container,
+        #tomorrow.container {
+            max-width: 100% !important; /* Override Bootstrap's default max-width */
+            padding-right: 0 !important; /* Remove default container padding */
+            padding-left: 0 !important; /* Remove default container padding */
         }
 
         #story .row,
@@ -440,7 +485,7 @@
 
         /* col-md-6 자세히 보기 formatting */
         .writing .btn{
-            width: 100%;
+            width: 90%;
             border-radius: 20px;
         }
 
@@ -452,12 +497,13 @@
 
         #story .writing,
         #tomorrow .writing{
-            padding: 30px 30px 10px 30px;
+            /* padding: 30px 30px 10px 30px; */
             background-color: white;
             border-radius: 20px !important;
-            padding: 0px;
+            padding: 10px;
             height: auto;
         }
+
 
         /* Story-image */
         #story .col-md-6 img,
@@ -485,17 +531,35 @@
             z-index: 0; 
         }
 
-        #brand-m{display:block !important;}
+        /* ============================================================================================================================
+        Brand 
+        ============================================================================================================================= */
         #brand{display: none !important;}
+        #brand-m{display:block !important;}
+        
+        #brand-m.container{
+            padding: 30px;
+        }
 
-        #brand>a{
+        #brand-m .col{
+            width: 150px;
+            height: 150px;
+        }
+
+        #brand-m .col img{
+            width: 96%;
+            height: 96%;
+        }
+        #brand-m>a{
             width: 100%;
         }
 
         .accordion {
             background-color: white;
             color: BLACK;
-            cursor: pointer;
+            /*change cursor shape when hovering over accordion*/
+            /* encourage users to click */
+            cursor: pointer;  
             padding: 18px;
             width: 100%;
             border: none; 
@@ -506,41 +570,26 @@
             transition: 0.4s;
         }
 
-        #footer-pc  {
-            display: none !important;
-        }
-        #footer-m{
-            display: block !important;
-            background-color: black;
-            color: white;
-        }
+        /* ===========================================================================
+        Footer
+        ============================================================================== */
+        /* Footer display */
+        #footer-pc{display: none !important;}
+        #footer-m{display: block !important;}
 
+        /* Footer accordion color change */
         #footer-m button,
         #footer-m div{
             background: black;
             color: white;
         }
+
+        /* Footer accordion text formatting */
         #footer-m p{
             text-align: left;
         }
 
-        .active, .accordion:hover {
-            background-color: white;
-        }
-
-        #collapsibleNavbar-m .accordion:after {
-            content: "\f054"; /* Unicode for FontAwesome's angle-right */
-            font-family: "Font Awesome 5 Free"; /* or the correct Font Awesome font */
-            font-weight: bold; /* necessary for solid style */
-            margin-left: 5px; /* space between text and chevron */
-            color: #777;
-            float: right;
-        }       
-
-        #collapsibleNavbar-m .active:after {
-            content: "\f078";  /* Unicode for FontAwesome's angle-down */
-        }
-
+        
         .panel {
             padding: 0 18px;
             background-color: white;
@@ -551,32 +600,43 @@
         
     
     }
+    /*==============================================================================
+    /mediaQuery
+    ================================================================================ */
 
-    /* Footer */
 
-    #footer-pc  {
-        display: block;
-    }
-    #footer-m{
-        display: none;
-    }
+
+
+
+    /*==============================================================================
+    Footer
+    ================================================================================ */
+
+    /* Footer display*/
+    #footer-pc{display: block;}
+    #footer-m{display: none;}
+    
+    /* Main footer container */
     footer.container-fluid{
         margin-top: 30px;
         padding-top: 100px;
         background-color: black;
         min-height: 400px;
     }
+
+    /* Footer > container > row.div > col-md-2 or col-md-6 > ul */
     footer ul{
         list-style: none;
         opacity: 1;
-        color: gray;
-        font-size: 0.5em;
-    }
-    footer ul li{
-        color: white;
-        font-size: 2em;
+        /* color: gray; */
     }
 
+    /* Footer > container > row.div > col-md-2 or col-md-6 > ul > li*/
+    footer ul li{
+        color: white;
+    }
+
+    /* Footer > container > row.div > col-md-2 > font-awesome buttons */
     footer div div div i{
         opacity: 1;
         color: white;
@@ -586,13 +646,16 @@
         padding: 1%;
     }
 
-    footer div div p{
+    /* Footer > container > #copyright */
+    #copyright>p{
         margin-top: 30px;
+        margin-bottom: 0px;
         opacity: 1;
         color: white;
         text-align: right;
     }
 
+    /* Accordion Arro up and down */
     #footer-m .accordion:after {
             content: "\f107"; /* Unicode for FontAwesome's angle-right */
             font-family: "Font Awesome 5 Free"; /* or the correct Font Awesome font */

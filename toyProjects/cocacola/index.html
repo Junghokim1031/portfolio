@@ -82,14 +82,18 @@
                         <a class="nav-link" href="#">Brand</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" >Our Company <i class="fa-solid fa-chevron-right"></i></a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Company <i class="fa-solid fa-chevron-right"></i>
+                        </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Coca-Cola Company</a></li>
                             <li><a class="dropdown-item" href="#">Since 1886</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button">Discover <i class="fa-solid fa-chevron-right"></i></a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Discover <i class="fa-solid fa-chevron-right"></i>
+                        </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Brand Story</a></li>
                             <li><a class="dropdown-item" href="#">Coke & Meal</a></li>
@@ -104,6 +108,7 @@
                     </li>
                 </ul>
             </div><!-- /MENU -->
+
 
 
             <!-- mobile navbar -->
@@ -131,7 +136,7 @@
                 <button class="accordion">Sustainability</button>
 
                 <script>
-                    var acc = document.getElementsByid("collapsibleNavbar-m");
+                    var acc = document.getElementById("collapsibleNavbar-m");
                     var i;
 
                     for (i = 0; i < acc.length; i++) {
@@ -328,7 +333,7 @@
     
 
     <!-- Brands -->
-     <div id="brand" class="container">
+    <div id="brand" class="container">
         <h1>브랜드 살펴보기</h1>
         <div class="row">
             <div class="col-md-4">
@@ -353,8 +358,8 @@
             </div>
         </div>
         <a class="btn btn-outline-dark" href="#">자세히 보기</a>
-     </div>
-     <div id="brand-m" class="container">
+    </div>
+    <div id="brand-m" class="container">
         <h1>브랜드 살펴보기</h1>
         <div class="row">
             <div class="col">
@@ -381,89 +386,87 @@
             </div>
         </div>
         <a class="btn btn-outline-dark" href="#">자세히 보기</a>
-     </div>
+    </div>
 
 
-     <!-- Footer -->
-      <footer  class="container-fluid">
-            <div class="container">
-                <img src="img/logo-white-large.svg" alt="Coca-Cola Company Logo">
-                <hr style="border: 1px solid white; opacity: 1">
-                <div id="footer-pc" class="row">
-                    <div class="col-md-2">
-                        <ul>소개
-                            <li>기업 소개</li>
-                            <li>히스토리</li>
-                            <li>채용</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <ul>도움이 필요하세요?
-                            <li>사이트 맵</li>
-                            <li>고객 안내</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul>법적고지
-                            <li>이용 약관</li>
-                            <li>쿠키 정책</li>
-                            <li>쿠키 설정</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <i class="fa-brands fa-youtube"></i>
-                        <i class="fa-brands fa-x-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-facebook"></i>
-                    </div>
+    <!-- Footer -->
+    <footer  class="container-fluid">
+        <div class="container">
+            <img src="img/logo-white-large.svg" alt="Coca-Cola Company Logo">
+            <hr style="border: 1px solid white; opacity: 1">
+            <div id="footer-pc" class="row">
+                <div class="col-md-2">
+                    소개<ul>
+                        <li>기업 소개</li>
+                        <li>히스토리</li>
+                        <li>채용</li>
+                    </ul>
                 </div>
-                <!-- mobile footer -->
-                <div id="footer-m">
-                    <button class="accordion">소개</button>
-                    <div class="panel">
-                        <p>기업 소개</p>
-                        <p>히스토리</p>
-                        <p>채용</p>
-                    </div>
-
-                    <button class="accordion">도움이 필요하세요?</button>
-                    <div class="panel">
-                        <p>사이트 맵</p>
-                        <p>고객 안내</p>
-                    </div>
-
-                    <button class="accordion">법적고지</button>
-                    <div class="panel">
-                        <p>이용 약관</p>
-                        <p>쿠키 정책</p>
-                        <p>쿠키 설정</p>
-                    </div>
-
-                    <script>
-                        var acc = document.getElementsByClassName("accordion");
-                        var i;
-
-                        for (i = 0; i < acc.length; i++) {
-                            acc[i].addEventListener("click", function() {
-                            this.classList.toggle("active");
-                            var panel = this.nextElementSibling;
-                            if (panel.style.maxHeight) {
-                            panel.style.maxHeight = null;
-                            } else {
-                            panel.style.maxHeight = panel.scrollHeight + "px";
-                            } 
-                        });
-                        }
-                    </script>
+                <div class="col-md-2">
+                    도움이 필요하세요?<ul>
+                        <li>사이트 맵</li>
+                        <li>고객 안내</li>
+                    </ul>
                 </div>
-
-                <hr style="border: 1px solid white; opacity: 1">
-                <div class="copyright">
-                    <p><b>&copy; 2024 The Coca‑Cola Company. 판권 소유</b></p>
+                <div class="col-md-6">
+                    법적고지<ul>
+                        <li>이용 약관</li>
+                        <li>쿠키 정책</li>
+                        <li>쿠키 설정</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
                 </div>
             </div>
+            <!-- mobile footer -->
+            <div id="footer-m">
+                <button class="accordion">소개</button>
+                <div class="panel">
+                    <p>기업 소개</p>
+                    <p>히스토리</p>
+                    <p>채용</p>
+                </div>
 
-            
-        </footer>
+                <button class="accordion">도움이 필요하세요?</button>
+                <div class="panel">
+                    <p>사이트 맵</p>
+                    <p>고객 안내</p>
+                </div>
+
+                <button class="accordion">법적고지</button>
+                <div class="panel">
+                    <p>이용 약관</p>
+                    <p>쿠키 정책</p>
+                    <p>쿠키 설정</p>
+                </div>
+
+                <script>
+                    var acc = document.getElementsByClassName("accordion");
+                    var i;
+
+                    for (i = 0; i < acc.length; i++) {
+                        acc[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                        } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                        } 
+                    });
+                    }
+                </script>
+            </div>
+
+            <hr style="border: 1px solid white; opacity: 1">
+            <div id="copyright">
+                <p><b>&copy; 2024 The Coca‑Cola Company. 판권 소유</b></p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
