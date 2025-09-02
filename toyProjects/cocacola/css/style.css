@@ -16,7 +16,9 @@
     }
 
     /* navbar - mobile > opacity 0 */
-    #collapsibleNavbar-m{ opacity: 0 !important;}
+    #collapsibleNavbar-m{
+        display: none !important;
+        opacity: 0 !important;}
 
     
 
@@ -175,6 +177,14 @@
         padding-bottom: 30px;
     }
 
+    /* width too large */
+    #month-pick>div,
+    #month-pick .slick-track {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     /* Thumbnail box formatting */
     #month-pick .thumbnail{
         background-color: white;
@@ -221,8 +231,8 @@
         /* background-color: blue; */
         padding-top: 30px;
         padding-bottom: 50px;
-        padding-left: 30px;
-        padding-right: 30px;
+        /* padding-left: 30px;
+        padding-right: 30px; */
     }
 
     /* col-md-6 style */
@@ -288,19 +298,21 @@
     }
 
     #story .col-md-6:nth-child(1){
-        margin-right: -100px !important;
+        /* Additional movement to left to take account
+        for the larger img */
+        margin-right: -7.5% !important;
         z-index: 1; 
     }
 
     #tomorrow .col-md-6:nth-child(1){
-        margin-right: -100px !important; 
+        margin-right: -5% !important; 
         z-index: 1;
     }
     
 
 
     /* ============================================================================================================================
-    Brand==========================================================================================================================
+    Brand
     ============================================================================================================================= */
     #brand-m{display:none !important;}
     
@@ -344,12 +356,17 @@
         height: 100%;
         object-fit: contain;
         border-radius: 20px !important;
+        transition: 1s;
     }
     
     /* Brand Image Hover Formatting */
     #brand .col-md-4:hover,
     #brand-m .col:hover{
         transform:scale(1.05)
+    }
+    #brand .col-md-4:hover img,
+    #brand-m .col:hover img{
+        transform:scale(.9524)
     }
 
     #brand>a,
@@ -465,6 +482,7 @@
             padding-bottom: 0px;
             margin-top: 0px;
             margin-bottom: 150px;
+            width: 100%;
         }
 
         #story.container,
@@ -481,6 +499,10 @@
             /* background-color: green; */
             /* The container is 600 px  */
             height: 500px;
+            width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
+            
         }
 
         /* col-md-6 자세히 보기 formatting */
@@ -613,7 +635,7 @@
     ================================================================================ */
 
     /* Footer display*/
-    #footer-pc{display: block;}
+    
     #footer-m{display: none;}
     
     /* Main footer container */
@@ -622,6 +644,10 @@
         padding-top: 100px;
         background-color: black;
         min-height: 400px;
+    }
+
+    footer h6{
+        text-align: center;
     }
 
     /* Footer > container > row.div > col-md-2 or col-md-6 > ul */
