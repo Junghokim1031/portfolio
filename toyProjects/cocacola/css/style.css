@@ -17,7 +17,7 @@
 
     /* navbar - mobile > opacity 0 */
     #collapsibleNavbar-m{
-        display: none !important;
+        display: none;
         opacity: 0 !important;}
 
     
@@ -170,6 +170,7 @@
     
     #month-pick{
         padding: 0 0px;
+        width: 100%;
     }
     #month-pick>h1{
         font-weight: bold;
@@ -400,16 +401,18 @@
         /* ============================================================================================================================
         gnb 
         ============================================================================================================================= */
-        #collapsibleNavbar-m{ opacity: 1 !important;}
-
         #collapsibleNavbar-m{
-            position: fixed !important;
+            opacity: 1 !important;
+            display:none !important;    position: fixed !important;
             width: 100%;
             height: 100% ;
             background-color: white;
             z-index: 10 ;
             top: 0;
             left: 0;
+        }
+        #collapsibleNavbar-m.show {
+            display: block !important;
         }
 
         #collapsibleNavbar-m .accordion:after {
@@ -470,8 +473,8 @@
             margin-bottom: 30px;
         }
         #month-pick{
-        padding: 0 0px;
-    }
+            padding: 0 0px;
+        }
         /* ============================================================================================================================
         Story & Tomorrow
         ============================================================================================================================= */
