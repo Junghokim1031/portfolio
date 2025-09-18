@@ -51,11 +51,11 @@
             dots: true,
             responsive: [
                 {
-                breakpoint: 768,
-                settings: {
-                    centerPadding: '40px',
-                    slidesToShow: 1,
-                }
+                    breakpoint: 768,
+                    settings: {
+                        centerPadding: '40px',
+                        slidesToShow: 1,
+                    }
                 }
             ]
         });
@@ -82,7 +82,7 @@
                         <a class="nav-link" href="#">Brand</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link" href="#" role="button">
                             Our Company <i class="fa-solid fa-chevron-right"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -91,7 +91,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link" href="#" role="button">
                             Discover <i class="fa-solid fa-chevron-right"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -117,120 +117,60 @@
                 <div style="text-align: right;">
                     <a href="#" class="btn" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar-m">&times;</a>
                 </div><!-- /Exit Menu -->
-            <div class="accordion accordion-flush" id="accordionMenu">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Brand
-                    </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMenu"></div>
-                    
-                </div>
-
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Our Company
-                    </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionMenu">
-                    <div class="accordion-body">
-                        <a class="dropdown-item" href="#">Coca-Cola Company</a>
-                        <a class="dropdown-item" href="#">Since 1886</a>
-                    </div>
-                    </div>
-                </div>
-
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Discover
-                    </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionMenu">
-                    <div class="accordion-body">
-                        <a class="dropdown-item" href="#">Brand Story</a>
-                        <a class="dropdown-item" href="#">Coke & Meal</a>
-                        <a class="dropdown-item" href="#">Originals</a>
-                        <a class="dropdown-item" href="#">Opener</a>
-                        <a class="dropdown-item" href="#">Creations</a>
-                        <a class="dropdown-item" href="#">CokePLAY App</a>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                        Sustainability
-                    </button>
-                    </h2>
-                </div>
-                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionMenu"></div>
-
-            </div>        
-
-
-
-
-
-
-
-
-
-
-                <!-- <div>
-                    <button class="accordion">Brand</button>
-                    <button class="accordion">Our Company</button>
-                    <div class="panel">
-                        <a class="dropdown-item" href="#">Coca-Cola Company</a>
-                        <a class="dropdown-item" href="#">Since 1886</a>
-                    </div>
-                    <button class="accordion">Discover</button>
-                    <div class="panel">
-                        <a class="dropdown-item" href="#">Brand Story</a>
-                        <a class="dropdown-item" href="#">Coke & Meal</a>
-                        <a class="dropdown-item" href="#">Originals</a>
-                        <a class="dropdown-item" href="#">Opener</a>
-                        <a class="dropdown-item" href="#">Creations</a>
-                        <a class="dropdown-item" href="#">CokePLAY App</a>
-                    </div>
-
-                    <button class="accordion">Sustainability</button>
-                </div> -->
-                <!-- <script>
-                    var acc = document.getElementById("collapsibleNavbar-m");
-                    var i;
-
-                    for (i = 0; i < acc.length; i++) {
-                    acc[i].addEventListener("click", function() {
-                        /* accordion 형태로 만들기 */            
-                        var panels = document.getElementsByClassName("panel");
-                        for (j = 0; j < panels.length; j++){
-                        if(acc[j]!== this){
-                            acc[j].classList.remove("active");
-                        }
-                        if (panels[j].style.maxHeight) {
-                            
-                            if(panels[j]!==this.nextElementSibling){
-                            panels[j].style.maxHeight = null;
-                            }
-                        }
-                        } 
+                <div class="accordion accordion-flush" id="accordionMenu">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Brand
+                        </button>
+                        </h2>
                         
-                        this.classList.toggle("active");
-                        var panel = this.nextElementSibling;
-                        if (panel.style.maxHeight) {
-                        panel.style.maxHeight = null;
-                        } else {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                        } 
-                    });
-                    }
-                </script> -->
+                        
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Our Company
+                        </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionMenu">
+                        <div class="accordion-body">
+                            <a class="dropdown-item" href="#">Coca-Cola Company</a>
+                            <a class="dropdown-item" href="#">Since 1886</a>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Discover
+                        </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionMenu">
+                        <div class="accordion-body">
+                            <a class="dropdown-item" href="#">Brand Story</a>
+                            <a class="dropdown-item" href="#">Coke & Meal</a>
+                            <a class="dropdown-item" href="#">Originals</a>
+                            <a class="dropdown-item" href="#">Opener</a>
+                            <a class="dropdown-item" href="#">Creations</a>
+                            <a class="dropdown-item" href="#">CokePLAY App</a>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            Sustainability
+                        </button>
+                        </h2>
+                    </div>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionMenu"></div>
+                </div>
             </div>
         </div>
     </nav>
@@ -238,6 +178,7 @@
     
 
     <!-- Slider ---------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div id="wrap">
     <div id="slider" class="slider-container">
         <div class="slider">
             <!-- Slide 1 -->
@@ -330,7 +271,8 @@
                 
             </div> <!-- /Slide 5-->
         </div> <!-- /Slider-->  
-    </div> <!-- /slider-container -->
+    </div> 
+    </div><!-- /slider-container -->
 
     <!-- 이달의 pick ---------------------------------------------------------------------------------------------------------------------------------------- -->
     <div id="month-pick" class="container-md container-fluid   slider-container">
@@ -461,7 +403,7 @@
             <img src="img/logo-white-large.svg" alt="Coca-Cola Company Logo">
             <hr style="border: 1px solid white; opacity: 1">
             <div id="footer-pc" class="row">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <h6>소개</h6>
                     <ul>
                         <li>기업 소개</li>
@@ -469,14 +411,14 @@
                         <li>채용</li>
                     </ul>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <h6>도움이 필요하세요?</h6>
                     <ul>
                         <li>사이트 맵</li>
                         <li>고객 안내</li>
                     </ul>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <h6>법적고지</h6>
                     <ul>
                         <li>이용 약관</li>
@@ -484,10 +426,10 @@
                         <li>쿠키 설정</li>
                     </ul>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                 </div>
-                <div class="col-md-2">
-                </div>
+                <!-- <div class="col-md-2">
+                </div> -->
                 <div class="col-md-2">
                     <i class="fa-brands fa-youtube"></i>
                     <i class="fa-brands fa-x-twitter"></i>
@@ -526,9 +468,9 @@
                         this.classList.toggle("active");
                         var panel = this.nextElementSibling;
                         if (panel.style.maxHeight) {
-                        panel.style.maxHeight = null;
+                            panel.style.maxHeight = null;
                         } else {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
+                            panel.style.maxHeight = panel.scrollHeight + "px";
                         } 
                     });
                     }
