@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Checker</title>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        
+    </style>
+    <script>
+        let string;
+        let latitude;
+        let longitude;
+
+        let option= {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        }
+
+        // If I click on the button, the following code runs
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success, error,option);
+            } else {
+                string = "Geolocation is not supported by this browser.";
+                document.getElementById("today").innerHTML = string;
+            }
+        }
+
+        // If getCurrentPosition is successful, the following code runs
+        function success(position) {
+            // Latitude and Longtitude
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+
+            // Internal Accuracy Checking Mechanism 
+            // Currently limited by IP address
+            // console.log("Latitude: " + latitude);
+            // console.log("Longitude: " + longitude);
+            // console.log("Accuracy: " + position.coords.accuracy);
+            // document.getElementById("today").innerHTML = string;
+
+
+            // Connecting to open-meteo API
+            $.ajax({
+                url: `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m&hourly=temperature_2m,relative_humidity_2m,weather_code&models=kma_seamless&timezone=auto&forecast_days=5`,
+                // data: {},
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    console.log("Weather data");
+                    console.log(data);
+                    // Temperature and Humidity
+                    let temperature = data.current.temperature_2m;
+                    let humidity = data.current.relative_humidity_2m;
+
+                    // Combined string for temperature and humidity
+                    let result = "Current Temperature:" + temperature +
+                                "  Humidity:" + humidity + "<br>";
+                    result = result +  displayTemp(data)
+
+                    // Printing combined string
+                    
+                    document.getElementById("today").innerHTML = result;
+                }
+            });
+        }
+
+        // if getCurrentPosition is not successful, the following code runs
+        function error() {
+            alert("Either the permission was not granted or location is unavailable.");
+        }
+
+        //now get humidity too. Rained and high humidity today (09/24) -> I need to get humidity also for my weather app practice.
+        function displayTemp(data){
+            //get today's weather
+            // dayOne is array of Temp
+            let dayOne = [];
+            // dayOneWeatherCode is array of Weather Code
+            let dayOneWeathercode = [];
+            for(let i=0;i<24;i++){
+                dayOne[i]=data.hourly.temperature_2m[i];
+                dayOneWeathercode[i]=data.hourly.weather_code[i];
+            }
+            // dayOneTemp is minimum and maximum weather of day in array of 2
+            let dayOneTemp = [];
+            dayOneTemp.push(Math.min.apply(null, dayOne));
+            dayOneTemp.push(Math.max.apply(null, dayOne));
+
+            //Interal Logging for Day One
+            //console.log(dayOne);
+            //console.log(dayOneWeathercode);
+            let dayOneWeather = getWeather(Math.max.apply(null, dayOneWeathercode));
+            //console.log(weather);
+            let dayOneString = `Today's Temperature: ${dayOneTemp[0]} - ${dayOneTemp[1]}\nExpectation: ${dayOneWeather}\n`;
+            console.log(dayOneString);
+
+
+            //get tomorrow's weather
+            // dayTwo is array of Temp
+            let dayTwo = [];
+            // dayTwoWeatherCode is array of Weather Code
+            let dayTwoWeathercode = [];
+            for(let i=24;i<48;i++){
+                dayTwo[i-24]=data.hourly.temperature_2m[i];
+                dayTwoWeathercode[i-24]=data.hourly.weather_code[i];
+            }
+            // dayTwoTemp is minimum and maximum weather of day in array of 2
+            let dayTwoTemp = [];
+            dayTwoTemp.push(Math.min.apply(null, dayTwo));
+            dayTwoTemp.push(Math.max.apply(null, dayTwo));
+
+            //Interal Logging for Day Two
+            //console.log(dayTwo);
+            //console.log(dayTwoTemp);
+            let dayTwoWeather = getWeather(Math.max.apply(null, dayTwoWeathercode));
+            //console.log(weather);
+            let dayTwoString =`Day 2 Temperature: ${dayTwoTemp[0]} - ${dayTwoTemp[1]}\nExpectation: ${dayTwoWeather}\n`;
+            console.log(dayTwoString);
+
+            
+            //get tomorrow + 1's weather
+            // dayThree is array of Temp
+            let dayThree = [];
+            // dayThreeWeatherCode is array of Weather Code
+            let dayThreeWeathercode = [];
+            for(let i=48;i<72;i++){
+                dayThree[i-48]=data.hourly.temperature_2m[i];
+                dayThreeWeathercode[i-48]=data.hourly.weather_code[i];
+            }
+            // dayThreeTemp is minimum and maximum weather of day in array of 2
+            let dayThreeTemp = [];
+            dayThreeTemp.push(Math.min.apply(null, dayThree));
+            dayThreeTemp.push(Math.max.apply(null, dayThree));
+
+            //Interal Logging for Day Three
+            //console.log(dayThree);
+            //console.log(dayThreeTemp);
+            let dayThreeWeather = getWeather(Math.max.apply(null, dayThreeWeathercode));
+            //console.log(weather);
+            let dayThreeString =`Day 3 Temperature: ${dayThreeTemp[0]} - ${dayThreeTemp[1]}\nExpectation: ${dayThreeWeather}\n`;
+            console.log(dayThreeString);
+            
+
+
+
+
+            //get tomorrow + 2's weather
+            // dayFour is array of Temp
+            let dayFour = [];
+            // dayFourWeatherCode is array of Weather Code
+            let dayFourWeathercode = [];
+            for(let i=72;i<96;i++){
+                dayFour[i-72]=data.hourly.temperature_2m[i];
+                dayFourWeathercode[i-72]=data.hourly.weather_code[i];
+            }
+            // dayFourTemp is minimum and maximum weather of day in array of 2
+            let dayFourTemp = [];
+            dayFourTemp.push(Math.min.apply(null, dayFour));
+            dayFourTemp.push(Math.max.apply(null, dayFour));
+
+            //Interal Logging for Day Four
+            //console.log(dayFour);
+            //console.log(dayFourTemp);
+            let dayFourWeather = getWeather(Math.max.apply(null, dayFourWeathercode));
+            //console.log(weather);
+            let dayFourString =`Day 4 Temperature: ${dayFourTemp[0]} - ${dayFourTemp[1]}\nExpectation: ${dayFourWeather}\n`;
+            console.log(dayFourString);
+            
+
+            //get tomorrow + 3's weather
+            // dayFive is array of Temp
+            let dayFive = [];
+            // dayFiveWeatherCode is array of Weather Code
+            let dayFiveWeathercode = [];
+            for(let i=96;i<120;i++){
+                dayFive[i-96]=data.hourly.temperature_2m[i];
+                dayFiveWeathercode[i-96]=data.hourly.weather_code[i];
+            }
+            // dayFiveTemp is minimum and maximum weather of day in array of 2
+            let dayFiveTemp = [];
+            dayFiveTemp.push(Math.min.apply(null, dayFive));
+            dayFiveTemp.push(Math.max.apply(null, dayFive));
+
+            //Interal Logging for Day Five
+            //console.log(dayFive);
+            //console.log(dayFiveTemp);
+            let dayFiveWeather = getWeather(Math.max.apply(null, dayFiveWeathercode));
+            //console.log(weather);
+            let dayFiveString =`Day 5 Temperature: ${dayFiveTemp[0]} - ${dayFiveTemp[1]}\nExpectation: ${dayFiveWeather}\n`;
+            console.log(dayFiveString);
+            
+            let totalWeather = ` ${dayOneString}<br>${dayTwoString}<br>${dayThreeString}<br>${dayFourString}<br>${dayFiveString}`;
+            return totalWeather;
+        }
+
+
+        function getWeather(code){
+            const n = Number(code);
+
+            if (Number.isNaN(n)) return "Invalid code";
+
+            // Exact matches
+            if (n === 0) return "Clear weather";
+            if (n === 45 || n === 48) return "Fog and hoarfrost deposit";
+            if (n === 95) return "Thunderstorm (light to moderate, no hail)";
+            if (n === 96) return "Thunderstorm (light to moderate, with hail)";
+
+            // Grouped sets
+            if (n === 1 || n === 2 || n === 3) {
+                return n === 1 ? "Partly Cloudy" : n === 2 ? "Locally Cloudy" : "Overcast";
+            }
+
+            // Ranges with intensity buckets
+            if (n >= 51 && n <= 55) {
+                const intensity = n === 51 ? "Light" : n === 53 ? "Moderate" : n === 55 ? "Heavy" : "Light/Moderate/Heavy";
+                return `${intensity} Drizzle`;
+            }
+
+            if (n >= 61 && n <= 65) {
+                const intensity = n === 61 ? "Light" : n === 63 ? "Moderate" : n === 65 ? "Heavy" : "Light/Moderate/Heavy";
+                return `${intensity} Rain`;
+            }
+
+            if (n >= 71 && n <= 75) {
+                const intensity = n === 71 ? "Light" : n === 73 ? "Moderate" : n === 75 ? "Heavy" : "Light/Moderate/Heavy";
+                return `${intensity} Snow`;
+            }
+
+            // Fallbacks for nearby standard WMO meanings (optional)
+            if (n === 77) return "Snow Grains / Ice Pellets";
+            if (n === 80 || n === 81 || n === 82) return "Rain Showers";
+            if (n === 85 || n === 86) return "Snow Showers";
+
+            // Default
+            return "Unknown weather code";
+            
+            // Examples:
+            // console.log(getWeatherDescription(0));   // "Clear weather"
+            // console.log(getWeatherDescription(3));   // "Partly cloudy, locally cloudy, overcast"
+            // console.log(getWeatherDescription(45));  // "Fog and hoarfrost deposit"
+            // console.log(getWeatherDescription(53));  // "Drizzle (moderate)"
+            // console.log(getWeatherDescription(61));  // "Rain (light)"
+            // console.log(getWeatherDescription(75));  // "Snow (heavy)"
+            // console.log(getWeatherDescription(95));  // "Thunderstorm (light to moderate, no hail)"
+            // console.log(getWeatherDescription(96));  // "Thunderstorm (light to moderate, with hail)"
+        }
+
+        
+        
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Weather Update</h1>
+    </header>
+
+    <button onclick="getLocation()">Get Location</button>
+    <div id="today"></div>
+
+</body>
+</html>
