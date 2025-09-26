@@ -51,7 +51,7 @@
                 type: "GET",
                 dataType: "json",
                 success: function(data) {
-                    console.log("Weather data");
+                    //console.log("Weather data");
                     console.log(data);
                     // Temperature and Humidity
                     let temperature = data.current.temperature_2m;
@@ -76,123 +76,58 @@
 
         //now get humidity too. Rained and high humidity today (09/24) -> I need to get humidity also for my weather app practice.
         function displayTemp(data){
-            //get today's weather
-            // dayOne is array of Temp
-            let dayOne = [];
-            // dayOneWeatherCode is array of Weather Code
-            let dayOneWeathercode = [];
+                        let d1Temp =[];
+            let d1WC = [];
+            let d1H = [];
+
             for(let i=0;i<24;i++){
-                dayOne[i]=data.hourly.temperature_2m[i];
-                dayOneWeathercode[i]=data.hourly.weather_code[i];
+                d1Temp[i]=data.hourly.temperature_2m[i];
+                d1WC[i]=data.hourly.weather_code[i];
+                d1H[i]=data.hourly.relative_humidity_2m[i];
             }
-            // dayOneTemp is minimum and maximum weather of day in array of 2
-            let dayOneTemp = [];
-            dayOneTemp.push(Math.min.apply(null, dayOne));
-            dayOneTemp.push(Math.max.apply(null, dayOne));
+            let dayOneString = `Today's Temperature: ${Math.min(...d1Temp)} - ${Math.max(...d1Temp)} Humidity: ${Math.max(...d1H)}%\nExpectation: ${getWeather(Math.max(...d1WC))}\n`;
 
-            //Interal Logging for Day One
-            //console.log(dayOne);
-            //console.log(dayOneWeathercode);
-            let dayOneWeather = getWeather(Math.max.apply(null, dayOneWeathercode));
-            //console.log(weather);
-            let dayOneString = `Today's Temperature: ${dayOneTemp[0]} - ${dayOneTemp[1]}\nExpectation: ${dayOneWeather}\n`;
-            console.log(dayOneString);
-
-
-            //get tomorrow's weather
-            // dayTwo is array of Temp
-            let dayTwo = [];
-            // dayTwoWeatherCode is array of Weather Code
-            let dayTwoWeathercode = [];
+            let d2Temp = [];
+            let d2WC = [];
+            let d2H = [];
             for(let i=24;i<48;i++){
-                dayTwo[i-24]=data.hourly.temperature_2m[i];
-                dayTwoWeathercode[i-24]=data.hourly.weather_code[i];
+                d2Temp[i-24]=data.hourly.temperature_2m[i];
+                d2WC[i-24]=data.hourly.weather_code[i];
+                d2H[i-24]=data.hourly.relative_humidity_2m[i];
             }
-            // dayTwoTemp is minimum and maximum weather of day in array of 2
-            let dayTwoTemp = [];
-            dayTwoTemp.push(Math.min.apply(null, dayTwo));
-            dayTwoTemp.push(Math.max.apply(null, dayTwo));
+            let dayTwoString = `Day 2's Temperature: ${Math.min(...d2Temp)} - ${Math.max(...d2Temp)} Humidity: ${Math.max(...d2H)}%\nExpectation: ${getWeather(Math.max(...d2WC))}\n`;
 
-            //Interal Logging for Day Two
-            //console.log(dayTwo);
-            //console.log(dayTwoTemp);
-            let dayTwoWeather = getWeather(Math.max.apply(null, dayTwoWeathercode));
-            //console.log(weather);
-            let dayTwoString =`Day 2 Temperature: ${dayTwoTemp[0]} - ${dayTwoTemp[1]}\nExpectation: ${dayTwoWeather}\n`;
-            console.log(dayTwoString);
-
-            
-            //get tomorrow + 1's weather
-            // dayThree is array of Temp
-            let dayThree = [];
-            // dayThreeWeatherCode is array of Weather Code
-            let dayThreeWeathercode = [];
+            let d3Temp = [];
+            let d3WC = [];
+            let d3H = [];
             for(let i=48;i<72;i++){
-                dayThree[i-48]=data.hourly.temperature_2m[i];
-                dayThreeWeathercode[i-48]=data.hourly.weather_code[i];
+                d3Temp[i-48]=data.hourly.temperature_2m[i];
+                d3WC[i-48]=data.hourly.weather_code[i];
+                d3H[i-48]=data.hourly.relative_humidity_2m[i];
             }
-            // dayThreeTemp is minimum and maximum weather of day in array of 2
-            let dayThreeTemp = [];
-            dayThreeTemp.push(Math.min.apply(null, dayThree));
-            dayThreeTemp.push(Math.max.apply(null, dayThree));
+            let dayThreeString = `Day 3's Temperature: ${Math.min(...d3Temp)} - ${Math.max(...d3Temp)} Humidity: ${Math.max(...d3H)}%\nExpectation: ${getWeather(Math.max(...d3WC))}\n`;
 
-            //Interal Logging for Day Three
-            //console.log(dayThree);
-            //console.log(dayThreeTemp);
-            let dayThreeWeather = getWeather(Math.max.apply(null, dayThreeWeathercode));
-            //console.log(weather);
-            let dayThreeString =`Day 3 Temperature: ${dayThreeTemp[0]} - ${dayThreeTemp[1]}\nExpectation: ${dayThreeWeather}\n`;
-            console.log(dayThreeString);
-            
-
-
-
-
-            //get tomorrow + 2's weather
-            // dayFour is array of Temp
-            let dayFour = [];
-            // dayFourWeatherCode is array of Weather Code
-            let dayFourWeathercode = [];
+            let d4Temp = [];
+            let d4WC = [];
+            let d4H = [];
             for(let i=72;i<96;i++){
-                dayFour[i-72]=data.hourly.temperature_2m[i];
-                dayFourWeathercode[i-72]=data.hourly.weather_code[i];
+                d4Temp[i-72]=data.hourly.temperature_2m[i];
+                d4WC[i-72]=data.hourly.weather_code[i];
+                d4H[i-72]=data.hourly.relative_humidity_2m[i];
             }
-            // dayFourTemp is minimum and maximum weather of day in array of 2
-            let dayFourTemp = [];
-            dayFourTemp.push(Math.min.apply(null, dayFour));
-            dayFourTemp.push(Math.max.apply(null, dayFour));
+            let dayFourString = `Day 4's Temperature: ${Math.min(...d4Temp)} - ${Math.max(...d4Temp)} Humidity: ${Math.max(...d4H)}%\nExpectation: ${getWeather(Math.max(...d4WC))}\n`;
 
-            //Interal Logging for Day Four
-            //console.log(dayFour);
-            //console.log(dayFourTemp);
-            let dayFourWeather = getWeather(Math.max.apply(null, dayFourWeathercode));
-            //console.log(weather);
-            let dayFourString =`Day 4 Temperature: ${dayFourTemp[0]} - ${dayFourTemp[1]}\nExpectation: ${dayFourWeather}\n`;
-            console.log(dayFourString);
-            
-
-            //get tomorrow + 3's weather
-            // dayFive is array of Temp
-            let dayFive = [];
-            // dayFiveWeatherCode is array of Weather Code
-            let dayFiveWeathercode = [];
+            let d5Temp = [];
+            let d5WC = [];
+            let d5H = [];
             for(let i=96;i<120;i++){
-                dayFive[i-96]=data.hourly.temperature_2m[i];
-                dayFiveWeathercode[i-96]=data.hourly.weather_code[i];
+                d5Temp[i-96]=data.hourly.temperature_2m[i];
+                d5WC[i-96]=data.hourly.weather_code[i];
+                d5H[i-96]=data.hourly.relative_humidity_2m[i];
             }
-            // dayFiveTemp is minimum and maximum weather of day in array of 2
-            let dayFiveTemp = [];
-            dayFiveTemp.push(Math.min.apply(null, dayFive));
-            dayFiveTemp.push(Math.max.apply(null, dayFive));
+            let dayFiveString = `Day 5's Temperature: ${Math.min(...d5Temp)} - ${Math.max(...d5Temp)} Humidity: ${Math.max(...d5H)}%\nExpectation: ${getWeather(Math.max(...d5WC))}\n`;
 
-            //Interal Logging for Day Five
-            //console.log(dayFive);
-            //console.log(dayFiveTemp);
-            let dayFiveWeather = getWeather(Math.max.apply(null, dayFiveWeathercode));
-            //console.log(weather);
-            let dayFiveString =`Day 5 Temperature: ${dayFiveTemp[0]} - ${dayFiveTemp[1]}\nExpectation: ${dayFiveWeather}\n`;
-            console.log(dayFiveString);
-            
+
             let totalWeather = ` ${dayOneString}<br>${dayTwoString}<br>${dayThreeString}<br>${dayFourString}<br>${dayFiveString}`;
             return totalWeather;
         }
