@@ -5,28 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오</title>
     <link rel="stylesheet" href="CSS/style.css">
+
+    
 </head>
 <body>
-    <h1>&#127891; Jung Ho Kim's Portfolio</h1>
-    <main>
-        <div class="toyProjects">
-            <h2>&#128640;Toy Project</h2>
-
-            <!-- Intentionally did not use pre. Spacing is for author's benefit. -->
-            <a href="toyProjects/Brand/index.html" target="_blank">Starbucks promotional page</a>
-                <p>Relevant skills: HTML - transition & animation</p>
-                <p>                 CSS</p>
-                <p>                 FontAwesome</p>
-            <a href="toyProjects/company/index.html" target="_blank">글로벌IT인재개발원</a>
-                <p>Relevant skills: HTML, CSS</p>
-                <p>                 Bootstrap 3</p>
-                <p>                 Responsive web</p> 
-            <a href="toyProjects/cocacola/index.html" target="_blank">Coca-Cola Webpage</a>
-                <p>Relevant skills: HTML, CSS</p>
-                <p>                 Bootstrap 5</p>
-                <p>                 Slick Slider</p> 
+     <!-- 전체 화면 인트로 섹션 -->
+    <section class="hero" id="hero">
+        <div>
+            <div class="hero-photo"></div>
+            <h1 class="hero-name">Jung Ho Kim</h1>
+            <p class="hero-subtitle">Full-stack Developer</p>
         </div>
+    </section>
+    <br>
+    <br>
+    
+    <main>
+        <h1> Jung Ho Kim's Portfolio</h1>
+        <section class="wave-text">
+            <span>Bio</span>
+            <p>안녕하세요, 자기주도적으로 풀스택 개발자로 성장 중인 주니어 개발자 김정호입니다. 
+                토이 프로젝트와 클론 코딩을 통해 웹 개발 기초를 다지며, 스타벅스·코카콜라 등 실제 
+                브랜드 페이지를 분석해 구조적인 마크업과 반응형 UI/UX를 꾸준히 연습하고 있습니다. 
+                현재 글로벌아이티 인재개발원 K-Digital Training 과정에서 Java, JDBC, Oracle DB를 
+                기반으로 한 백엔드와 Kakao 지도 API를 활용한 ‘Place-Eat’ 여행·맛집 정보 공유 서비스를 
+                팀원들과 함깨 개발하며 프론트엔드와 백엔드를 잇는 엔드투엔드 경험을 쌓고 있습니다. 스스로 목표를 설정하고 
+                포트폴리오를 개선해 나가는 과정 속에서 문제를 정의하고 해결하는 능력을 키워 가고 있으며, 
+                이 레포지토리는 그런 성장 여정을 담은 기록입니다.</p>
+        </section>
+
+         <section class="skills">
+            <h2>Skill Stack</h2>
+
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <h3>Frontend</h3>
+                    <p class="skill-desc">
+                        마크업 구조화, 반응형 레이아웃, 인터랙션을 중심으로 연습하고 있습니다.
+                    </p>
+                    <ul class="skill-tags">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>CSS - Animation</li>
+                        <li>CSS - Transition</li>
+                        <li>JavaScript</li>
+                        <li>Ajax</li>
+                        <li>jQuery</li>
+                        <li>Bootstrap 3 & 5</li>
+                        <li>Slick Slider</li>
+                    </ul>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Backend</h3>
+                    <p class="skill-desc">
+                        글로벌아이티 과정 프로젝트를 통해 기본적인 서버·DB 연동을 경험했습니다.
+                    </p>
+                    <ul class="skill-tags">
+                        <li>Java</li>
+                        <li>JDBC</li>
+                        <li>Oracle DB</li>
+                        <li>MVC 패턴</li>
+                        <li>REST API</li>
+                    </ul>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Tools & Etc.</h3>
+                    <p class="skill-desc">
+                        협업과 버전 관리를 위해 필수적인 도구들을 익히고 있습니다.
+                    </p>
+                    <ul class="skill-tags">
+                        <li>Git / GitHub</li>
+                        <li>VS Code</li>
+                        <li>Figma</li>
+                        <li>Kakao 지도 API</li>
+                        <li>Notion · Jira</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="projects">
+    <h2>🚀 Toy & Team Projects</h2>
+
+    <div class="projects-grid">
+        <!-- Starbucks -->
+        <article class="project-card">
+            <h3>Starbucks Promotional Page</h3>
+            <p class="project-desc">
+                스타벅스 프로모션 랜딩 페이지 클론으로, 섹션 전환 애니메이션과
+                배너 호버 효과를 통해 CSS 트랜지션과 레이아웃을 연습했습니다.
+            </p>
+            <ul class="project-tags">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Transition · Animation</li>
+                <li>Font Awesome</li>
+            </ul>
+            <a class="project-link" href="toyProjects/Brand/index.html" target="_blank">
+                View Demo
+            </a>
+        </article>
+
+        <!-- 글로벌IT인재개발원 페이지 -->
+        <article class="project-card">
+            <h3>글로벌IT인재개발원 Landing</h3>
+            <p class="project-desc">
+                교육기관 소개 페이지 클론으로, 반응형 그리드와 공지/과정 소개 섹션을 구현하며
+                부트스트랩 3 기반의 레이아웃을 익혔습니다.
+            </p>
+            <ul class="project-tags">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Bootstrap 3</li>
+                <li>Responsive Web</li>
+            </ul>
+            <a class="project-link" href="toyProjects/company/index.html" target="_blank">
+                View Demo
+            </a>
+        </article>
+
+        <!-- Coca-Cola -->
+        <article class="project-card">
+            <h3>Coca-Cola Webpage</h3>
+            <p class="project-desc">
+                브랜드 캠페인 스타일의 웹페이지로, Bootstrap 5와 슬릭 슬라이더를 활용해
+                반응형 이미지 슬라이더와 섹션 전환 효과를 구현했습니다.
+            </p>
+            <ul class="project-tags">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Bootstrap 5</li>
+                <li>Slick Slider</li>
+            </ul>
+            <a class="project-link" href="toyProjects/cocacola/index.html" target="_blank">
+                View Demo
+            </a>
+        </article>
+
+        <!-- Place-Eat 팀 프로젝트 (GitHub 레포 링크) -->
+        <article class="project-card">
+            <h3>Place-Eat (Travel & Food)</h3>
+            <p class="project-desc">
+                Kakao 지도 API를 활용해 여행·맛집 정보를 공유하는 웹 서비스로,
+                Java · JDBC · Oracle DB 기반의 백엔드와 프론트엔드를 연동한 팀 프로젝트입니다.
+            </p>
+            <ul class="project-tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Ajax</li>
+                <li>Java</li>
+                <li>Oracle DB</li>
+                <li>Kakao Maps API</li>
+                <li>Team Project</li>
+            </ul>
+            <a class="project-link" href="https://github.com/Junghokim1031/PlaceEat"
+               target="_blank">
+                View on GitHub
+            </a>
+        </article>
+    </div>
+</section>
+
     </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hero = document.getElementById("hero");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 0) {
+            hero.classList.add("hidden");
+          } else {
+            // 맨 위로 다시 스크롤하면 다시 보이게 하고 싶으면 이 줄 유지
+            hero.classList.remove("hidden");
+          }
+        });
+      });
+    </script>
 </body>
 </html>
 
