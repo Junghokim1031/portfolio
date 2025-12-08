@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.BoardAttachMapper">
+<!-- REMINDER : THERE SHOULD BE NO SEMI-COLON ON THIS PAGE -->
+
+	
+	<insert id="insert">
+		insert into tbl_attach values (#{uuid}, #{uploadPath},#{fileName}, #{fileType}, #{bno})
+	</insert>
+	
+	<select id="findByBno" resultType ="org.zerock.domain.BoardAttachVO" >
+		select * from tbl_attach where bno=#{bno}
+	</select>
+	
+	<delete id="delete">
+		delete * from tbl_attach where uuid = #{uuid}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from tbl_attach where bno = #{bno} 
+	</delete>
+	
+	<!-- For Instances where files get uploaded but it is not uploaded onto 게시판 -->
+	<!-- Delete the content from previous day -->
+	<select id="getOldFiles" resultType ="org.zerock.domain.BoardAttachVO" >
+		select * from tbl_attach where uploadPath=to_char(sysdate-1,'yyyy\mm\dd')
+	</select>
+	
+	
+	
+</mapper>
