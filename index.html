@@ -3,261 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포트폴리오</title>
+    <title>김정호 - 포트폴리오</title>
     <link rel="stylesheet" href="CSS/style.css">
-
-    
 </head>
 <body>
-     <!-- 전체 화면 인트로 섹션 -->
+    
     <section class="hero" id="hero">
         <div>
-            <div class="hero-photo">
-            </div>
+            <div class="hero-photo"></div>
             <h1 class="hero-name">Jung Ho Kim</h1>
             <p class="hero-subtitle">Full-stack Developer</p>
         </div>
     </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
+
+    <br><br><br><br><br><br>
+
     <main>
-        <h1> Jung Ho Kim's Portfolio</h1>
+        <h1>Jung Ho Kim's Portfolio</h1>
+
         <section class="wave-text">
             <span>Bio</span>
-            <p>안녕하세요, 자기주도적으로 풀스택 개발자로 성장 중인 주니어 개발자 김정호입니다. 
-                토이 프로젝트와 클론 코딩을 통해 웹 개발 기초를 다지며, 코카콜라 
-                브랜드 페이지를 분석해 구조적인 마크업과 반응형 UI/UX를 꾸준히 연습하였으며 
-                현재 글로벌아이티 인재개발원 K-Digital Training 과정에서 Java, JDBC, Oracle DB를 
-                기반으로 한 백엔드와 Kakao 지도 API를 활용한 ‘Place-Eat’ 여행·맛집 정보 공유 서비스를 
-                팀원들과 함깨 개발하며 프론트엔드와 백엔드를 잇는 엔드투엔드 경험을 쌓았습니다. 스스로 목표를 설정하고 
-                포트폴리오를 개선해 나가는 과정 속에서 문제를 정의하고 해결하는 능력을 키워 가고 있으며, 
-                이 레포지토리는 그런 성장 여정을 담은 기록입니다.
+            <p>
+                안녕하세요, 끊임없이 성장하는 풀스택 개발자 김정호입니다. 
+                웹 개발의 기초를 다지기 위해 다양한 클론 코딩을 진행하며 UI/UX에 대한 감각을 익혔고, 
+                팀 프로젝트 ‘Place-Eat’을 통해 협업과 데이터베이스 설계의 중요성을 배웠습니다.
                 <br><br>
-                Note: KAKAO API Key가 공개되어 삭제하였습니다.</p>
+                최근에는 <strong>배달 플랫폼 서비스 'Catch-A-Bite'</strong>를 PM 및 GitHub 답당자로 개발하며 
+                <strong>Spring Boot과 React + Vite</strong> 기반의 현대적인 풀스택 아키텍처를 구축했습니다. 
+                이 과정에서 <strong>Spring Security</strong>를 이용한 역할 기반 인증(RBAC), <strong>QueryDSL</strong>을 활용한 
+                동적 데이터 조회 최적화, 그리고 <strong>PortOne API</strong>를 연동한 실시간 결제 시스템 등 
+                실무 수준의 복잡한 기능을 주도적으로 구현했습니다.
+                <br><br>
+                단순히 기능을 만드는 것을 넘어, 레거시 기술(JDBC, JSP)에서 모던 스택(JPA, React)으로 
+                기술을 마이그레이션하며 <strong>'더 나은 코드와 사용자 경험'</strong>을 고민하는 개발자로 성장했습니다. 
+                이 포트폴리오는 그러한 치열한 고민과 성장의 기록입니다.
+            </p>
+            <br>
         </section>
 
         <section class="skills">
-            <h2>Skill Stack</h2>
+            <h1>Skill Stack</h1><br>
+            <div class="table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>분류 (Category)</th>
+                            <th>설명 (Description)</th>
+                            <th>보유 기술 (Tech Stack)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">Frontend</td>
+                            <td class="desc-text">
+                                구조화, 반응형 레이아웃, 인터랙션을 중심으로 최신 프론트엔드 도구를 활용합니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>JavaScript (ES6+)</li>
+                                    <li>jQuery</li>
+                                    <li>Ajax</li>
+                                    <li>React + Vite</li>
+                                    <li>React Router</li>
+                                    <li>Axios</li>
+                                    <li>Bootstrap 5</li>
+                                </ul>
+                            </td>
+                        </tr>
 
-            <div class="skills-grid">
-                <article class="skill-card">
-                    <h3>Frontend</h3>
-                    <p class="skill-desc">
-                        구조화, 반응형 레이아웃, 인터랙션을 중심으로 연습하고 있습니다.
-                    </p>
-                    <ul class="skill-tags">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>CSS - Animation</li>
-                        <li>CSS - Transition</li>
-                        <li>JavaScript</li>
-                        <li>Ajax</li>
-                        <li>jQuery</li>
-                        <li>Bootstrap 3 & 5</li>
-                        <li>Open-source Codes</li>
-                    </ul>
-                </article>
+                        <tr>
+                            <td class="fw-bold">Backend</td>
+                            <td class="desc-text">
+                                Spring Boot 기반의 안정적인 서버 구축과 데이터베이스 설계를 학습했습니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>Java 17</li>
+                                    <li>Spring Boot 3.x</li>
+                                    <li>Spring Security</li>
+                                    <li>Spring Data JPA</li>
+                                    <li>QueryDSL</li>
+                                    <li>MyBatis</li>
+                                    <li>Oracle DB</li>
+                                    <li>MariaDB</li>
+                                </ul>
+                            </td>
+                        </tr>
 
-                <article class="skill-card">
-                    <h3>Backend</h3>
-                    <p class="skill-desc">
-                        글로벌아이티 과정 프로젝트를 통해 MVC 패턴 및 Spring/Spring Boot 기반 프로젝트를 사용하는 것을 배웠습니다.
-                    </p>
-                    <ul class="skill-tags">
-                        <li>Java</li>
-                        <li>JDBC</li>
-                        <li>Oracle DB</li>
-                        <li>MariaDB</li>
-                        <li>MVC 패턴</li>
-                        <li>SQL</li>
-                        <li>Spring</li>
-                        <li>Spring Boot</li>
-                    </ul>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Tools & Etc.</h3>
-                    <p class="skill-desc">
-                        협업과 버전 관리를 위해 필수적인 도구들을 익히고 있습니다.
-                    </p>
-                    <ul class="skill-tags">
-                        <li>Git / GitHub</li>
-                        <li>VS Code</li>
-                        <li>Eclipse</li>
-                        <li>IntelliJ</li>
-                        <li>Figma</li>
-                        <li>Kakao 지도 API</li>
-                        <li>Notion · Jira</li>
-                    </ul>
-                </article>
+                        <tr>
+                            <td class="fw-bold">Tools & Etc.</td>
+                            <td class="desc-text">
+                                협업 툴과 버전 관리, 그리고 가상화 환경 구축 경험이 있습니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>Git / GitHub</li>
+                                    <li>Linux (Ubuntu)</li>
+                                    <li>Docker</li>
+                                    <li>Oracle VirtualBox</li>
+                                    <li>IntelliJ / Eclipse</li>
+                                    <li>Figma</li>
+                                    <li>Kakao Maps API</li>
+                                    <li>Jira / Notion</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <br>
+        </section>
+
+<section class="projects">
+            <h2>Team Projects</h2>
+            <div class="table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>프로젝트<br>(Project)</th>
+                            <th>설명 (Description)</th>
+                            <th>기술 스택<br>(Tech Stack)</th>
+                            <th>링크 (Link)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">Catch-A-Bite<br><span class="sub-text">Commerce Platform</span></td>
+                            
+                            <td class="desc-text" style="word-wrap: break-word;">
+                                'Catch-A-Bite'는 <strong>Spring Boot 3.3</strong>와 <strong>React(Vite)</strong> 환경에서 구축된 풀스택 배달 플랫폼입니다. 
+                                <br><br>
+                                백엔드에서는 <strong>JPQL</strong>을 도입하여 복잡한 주문 내역 및 정산 데이터의 조회 성능을 최적화하였으며, 
+                                <strong>Spring Security</strong>로 사용자/점주/라이더의 권한을 분리한 보안 시스템을 구축했습니다.
+                                <br><br>
+                                프론트엔드는 <strong>PortOne API</strong>를 통한 실시간 결제 검증과 <strong>Kakao Map API</strong> 주소 연동을 통해 실제 서비스 가능한 수준의 비즈니스 로직을 구현했습니다.
+                            </td>
+                            
+                            <td>
+                                <ul class="table-tags">
+                                    <li>React + Vite</li>
+                                    <li>Spring Boot 3.3</li>
+                                    <li>Spring Security</li>
+                                    <li>JPQL</li>
+                                    <li>Spring Data JPA</li>
+                                    <li>MariaDB / Oracle</li>
+                                    <li>PortOne API</li>
+                                    <li>Kakao Maps API</li>
+                                </ul>
+                            </td>
+                            
+                            <td>
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <a class="table-link" href="https://github.com/Junghokim1031/catch-a-bite" target="_blank">Backend Repo</a>
+                                    <a class="table-link" href="https://github.com/Junghokim1031/Catch-A-Bite-User-Server" target="_blank">Frontend Repo</a>
+                                    <a class="table-link" href="https://www.notion.so/junghokim1031/2cc07d524e0680e39739e1531ed4b67f" target="_blank">개발 문서함</a>
+                                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                                        <a class="table-link" 
+                                            href="/Team Project/Catch-A-Bite/Presentation.pdf" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer">
+                                            발표 자료
+                                        </a>
+                                        <a class="table-link" 
+                                            href="/Team Project/Catch-A-Bite/Presentation.mp4" 
+                                            target="_blank">
+                                            발표
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
         </section>
 
         <section class="projects">
-            <h2> Team Project</h2>
-            <!-- Place-Eat 팀 프로젝트 (GitHub 레포 링크) -->
-            <article class="project-card">
-                <h3>Place-Eat (Travel & Food)</h3>
-                <p class="project-desc">
-                    Kakao 지도 API를 활용해 여행·맛집 정보를 공유하는 웹 서비스로,
-                    Java · JDBC · Oracle DB 기반의 백엔드와 프론트엔드를 연동한 팀 프로젝트입니다.
-                </p>
-                <ul class="project-tags">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Ajax</li>
-                    <li>Java</li>
-                    <li>Oracle DB</li>
-                    <li>MVC Pattern</li>
-                    <li>Kakao Maps API</li>
-                    <li>Team Project</li>
-                </ul>
-                <a class="project-link" href="https://github.com/Junghokim1031/PlaceEat"
-                target="_blank">
-                    View on GitHub
-                </a>
-            </article><!-- End of Team Project -->
+            <h2>Team Project</h2>
+            <div class="table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>프로젝트 (Project)</th>
+                            <th>설명 (Description)</th>
+                            <th>기술 스택 (Tech Stack)</th>
+                            <th>링크 (Link)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">Place-Eat<br><span class="sub-text">(Travel & Food)</span></td>
+                            <td class="desc-text">
+                                Kakao 지도 API를 활용해 여행·맛집 정보를 공유하는 웹 서비스입니다.
+                                Java · JDBC · Oracle DB 기반의 백엔드와 프론트엔드를 연동하였으며,
+                                팀 프로젝트로서 협업을 통해 완성했습니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>HTML/CSS/JS</li>
+                                    <li>Ajax</li>
+                                    <li>Java</li>
+                                    <li>Oracle DB</li>
+                                    <li>MVC Pattern</li>
+                                    <li>Kakao Maps API</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <a class="table-link" href="https://github.com/Junghokim1031/PlaceEat" target="_blank">GitHub</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
         </section>
 
         <section class="projects">
-            <h2>Toy & Team Projects</h2>
+            <h2>Toy & Clone Projects</h2>
+            <div class="table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>프로젝트 (Project)</th>
+                            <th>설명 (Description)</th>
+                            <th>기술 스택 (Tech Stack)</th>
+                            <th>링크 (Link)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">Starbucks Promo</td>
+                            <td class="desc-text">
+                                스타벅스 프로모션 랜딩 페이지 클론 코딩입니다. 
+                                섹션 전환 애니메이션과 배너 호버 효과 등을 통해 CSS 트랜지션과 레이아웃을 중점적으로 연습했습니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>Animation</li>
+                                    <li>Font Awesome</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <a class="table-link" href="toyProjects/Brand/index.html" target="_blank">Demo</a>
+                            </td>
+                        </tr>
 
-            <div class="projects-grid">
-                <!-- Starbucks -->
-                <article class="project-card">
-                    <h3>Starbucks Promotional Page</h3>
-                    <p class="project-desc">
-                        스타벅스 프로모션 랜딩 페이지 클론으로, 섹션 전환 애니메이션과
-                        배너 호버 효과를 통해 CSS 트랜지션과 레이아웃을 연습했습니다.
-                    </p>
-                    <ul class="project-tags">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>Transition · Animation</li>
-                        <li>Font Awesome</li>
-                    </ul>
-                    <a class="project-link" href="toyProjects/Brand/index.html" target="_blank">
-                        View Demo
-                    </a>
-                </article><!-- End of Project -->
+                        <tr>
+                            <td class="fw-bold">글로벌IT인재개발원</td>
+                            <td class="desc-text">
+                                교육기관 소개 페이지 클론 코딩입니다. 
+                                반응형 그리드 시스템과 공지사항 섹션을 구현하며 Bootstrap 3 기반의 레이아웃을 익혔습니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>Bootstrap 3</li>
+                                    <li>Responsive</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <a class="table-link" href="toyProjects/company/index.html" target="_blank">Demo</a>
+                            </td>
+                        </tr>
 
-                <!-- 글로벌IT인재개발원 페이지 -->
-                <article class="project-card">
-                    <h3>글로벌IT인재개발원 Landing</h3>
-                    <p class="project-desc">
-                        교육기관 소개 페이지 클론으로, 반응형 그리드와 공지/과정 소개 섹션을 구현하며
-                        부트스트랩 3 기반의 레이아웃을 익혔습니다.
-                    </p>
-                    <ul class="project-tags">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>Bootstrap 3</li>
-                        <li>Responsive Web</li>
-                        <li>Kakao Maps API</li>
-                    </ul>
-                    <a class="project-link" href="toyProjects/company/index.html" target="_blank">
-                        View Demo
-                    </a>
-                </article><!-- End of Project -->
+                        <tr>
+                            <td class="fw-bold">Coca-Cola</td>
+                            <td class="desc-text">
+                                브랜드 캠페인 스타일의 웹페이지입니다. 
+                                Bootstrap 5와 Slick Slider 라이브러리를 활용해 반응형 이미지 슬라이더를 구현했습니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>Bootstrap 5</li>
+                                    <li>Slick Slider</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <a class="table-link" href="toyProjects/cocacola/index.html" target="_blank">Demo</a>
+                            </td>
+                        </tr>
 
-                <!-- Coca-Cola -->
-                <article class="project-card">
-                    <h3>Coca-Cola Webpage</h3>
-                    <p class="project-desc">
-                        브랜드 캠페인 스타일의 웹페이지로, Bootstrap 5와 슬릭 슬라이더를 활용해
-                        반응형 이미지 슬라이더와 섹션 전환 효과를 구현했습니다.
-                    </p>
-                    <ul class="project-tags">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>Bootstrap 5</li>
-                        <li>Slick Slider</li>
-                    </ul>
-                    <a class="project-link" href="toyProjects/cocacola/index.html" target="_blank">
-                        View Demo
-                    </a>
-                </article><!-- End of Project -->
+                        <tr>
+                            <td class="fw-bold">날씨 확인 웹</td>
+                            <td class="desc-text">
+                                OpenWeather API를 연동하여 오늘을 포함한 5일간의 날씨 정보를 시각적으로 확인할 수 있는 사이트입니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>HTML5/CSS3</li>
+                                    <li>API Call</li>
+                                    <li>Slick Slider</li>
+                                    <li>CSS Animation</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <a class="table-link" href="toyProjects/temperature/index.html" target="_blank">Demo</a>
+                            </td>
+                        </tr>
 
-                <!-- Temperature -->
-                <article class="project-card">
-                    <h3>날씨 확인</h3>
-                    <p class="project-desc">
-                        오늘을 포함한 5일의 날씨를 확인하는 사이트를 구현했습니다.
-                    </p>
-                    <ul class="project-tags">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>CSS Animation</li>
-                        <li>Slick Slider</li>
-                        <li>API call</li>
-                    </ul>
-                    <a class="project-link" href="toyProjects/temperature/index.html" target="_blank">
-                        View Demo
-                    </a>
-                </article><!-- End of Project -->
+                        <tr>
+                            <td class="fw-bold">학사 관리 프로그램</td>
+                            <td class="desc-text">
+                                Java Swing (Frame, Panel)을 이용하여 구현한 데스크탑 학사 관리 애플리케이션입니다. 
+                                DB 연동을 통해 데이터 영속성을 보장합니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>Java</li>
+                                    <li>Swing (GUI)</li>
+                                    <li>Oracle DB</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <a class="table-link" href="toyProjects/Haksa/Haksa Demo.mp4" target="_blank">Video</a>
+                            </td>
+                        </tr>
 
-                <!-- Temperature -->
-                <article class="project-card">
-                    <h3>학사 프로그램</h3>
-                    <p class="project-desc">
-                        Java Frame 및 Panel을 이용하여 프로그램을 구성해 보았습니다.
-                    </p>
-                    <ul class="project-tags">
-                        <li>Java</li>
-                        <li>Java Swing</li>
-                        <li>Oracle DB</li>
-                    </ul>
-                    <a class="project-link" href="toyProjects/Haksa/Haksa Demo.mp4" target="_blank">
-                        View Demo
-                    </a>
-                </article> <!-- End of Project -->
-
-                <article class="project-card">
-                    <h3>(Spring 기반) IT Board</h3>
-                    <p class="project-desc">
-                        Spring 기반 IT 게시판으로, CRUD 기능과 Bootstrap을 활용한 반응형 UI를 구현했습니다. 
-                        이 프로젝트는 DB 연동과 파일을 업로드 하는 기능 및 파일 형식을 확인하는 
-                        기능을 포함하였으며 댓글 및 로그인 기능 또한 포함하였습니다.
-                    </p>
-                    <ul class="project-tags">
-                        <li>HTML,CSS,JavaScript</li>
-                        <li>Bootstrap</li>
-                        <li>jQuery</li>
-                        <li>Ajax</li>
-                        <li>Java</li>
-                        <li>Oracle DB</li>
-                        <li>Spring legacy</li>
-                        <li>MVC 패턴</li>
-                    </ul>
-                    <a class="project-link" href="toyProjects/Board/Demo.mp4" target="_blank">
-                        데모 보기
-                    </a>
-                </article> <!-- End of Project -->
-            </div> <!-- End of Project Grid-->
+                        <tr>
+                            <td class="fw-bold">IT Board (Spring)</td>
+                            <td class="desc-text">
+                                Spring Legacy 기반의 게시판 프로젝트입니다. 
+                                CRUD, 파일 업로드, 댓글, 로그인 및 유효성 검사 기능을 포함하고 있습니다.
+                            </td>
+                            <td>
+                                <ul class="table-tags">
+                                    <li>Spring Legacy</li>
+                                    <li>Java</li>
+                                    <li>Oracle DB</li>
+                                    <li>MyBatis</li>
+                                    <li>Bootstrap</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <a class="table-link" href="toyProjects/Board/Demo.mp4" target="_blank">Video</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const hero = document.getElementById("hero");
+        document.addEventListener("DOMContentLoaded", () => {
+            const hero = document.getElementById("hero");
 
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 0) {
-            hero.classList.add("hidden");
-          } else {
-            // 맨 위로 다시 스크롤하면 다시 보이게 하고 싶으면 이 줄 유지
-            hero.classList.remove("hidden");
-          }
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 0) {
+                    hero.classList.add("hidden");
+                } else {
+                    // 스크롤을 맨 위로 올리면 다시 나타나게 함
+                    hero.classList.remove("hidden");
+                }
+            });
         });
-      });
     </script>
 </body>
 </html>
-
-

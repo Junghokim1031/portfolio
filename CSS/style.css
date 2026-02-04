@@ -1,11 +1,16 @@
-/* 공통 코드 작성*/
+/*============================================================================================================================================
+
+    1. 기본 설정 및 초기화 (Basic Setup & Reset)
+    - 색상 변수 정의 및 전체 요소 초기화
+
+/*============================================================================================================================================*/
 
 :root {
-    --color-emphasis: #3873A6;
-    --color-light: #F2F2F2;
-    --color-gray-light: #BFBFBF;
-    --color-gray: #8C8C8C;
-    --color-dark: #262626;
+    --color-emphasis: #3873A6;       /* 강조 색상 (파란 계열) */
+    --color-light: #F2F2F2;          /* 기본 텍스트 및 밝은 배경 */
+    --color-gray-light: #BFBFBF;     /* 연한 회색 */
+    --color-gray: #8C8C8C;           /* 중간 회색 (보조 텍스트) */
+    --color-dark: #262626;           /* 전체 배경색 (어두운 색) */
 }
 
 /* 전체 리셋 + 기본 텍스트 색만 지정 */
@@ -19,11 +24,13 @@ body {
     background-color: var(--color-dark);  
     color: var(--color-light);            
     padding-left: 10px;
+    font-family: 'Noto Sans KR', sans-serif; /* 폰트 예시 (필요시 추가) */
 }
 
 /*============================================================================================================================================
 
-    HERO Section 
+    2. 히어로 섹션 (Hero Section)
+    - 전체 화면 인트로, 스크롤 시 사라지는 효과 포함
 
 /*============================================================================================================================================*/
 .hero {
@@ -41,18 +48,20 @@ body {
     color: var(--color-light);   
 }
 
+/* 스크롤 시 히어로 섹션 숨김 처리 */
 .hero.hidden {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
 }
 
+/* 프로필 사진 스타일 */
 .hero-photo {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     margin: 0 auto 1.2rem;
-    background-image: url("../img/me.png");
+    background-image: url("../img/me.png"); /* 이미지 경로 확인 필요 */
     background-size: cover;
     background-position: center;
     box-shadow:
@@ -74,17 +83,24 @@ body {
 
 /*============================================================================================================================================
 
-    Main section
+    3. 메인 레이아웃 (Main Layout)
+    - 본문 콘텐츠의 최대 너비 및 정렬 설정
 
 /*============================================================================================================================================*/
 main {
     max-width: 900px;
     margin: 0 auto;
     color: var(--color-light);
-    min-height: 105vh;
+    min-height: 105vh; /* 스크롤을 유도하기 위한 최소 높이 */
+    padding-bottom: 5rem;
 }
 
-/* Bio */
+/*============================================================================================================================================
+
+    4. 자기소개 섹션 (Bio Section)
+    - 웨이브 텍스트 애니메이션 포함
+
+/*============================================================================================================================================*/
 .wave-text span {
     display: inline-block;
     font-size: 4rem;
@@ -94,139 +110,184 @@ main {
 .wave-text p {
     font-size: 1rem;
     line-height: 1.6;
+    margin-top: 1rem;
 }
 
-.wave-text span:nth-child(1) {
-    animation-delay: 0s;
-}
-.wave-text span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-.wave-text span:nth-child(3) {
-    animation-delay: 0.4s;
-}
-.wave-text span:nth-child(4) {
-    animation-delay: 0.6s;
-}
+/* 글자별 애니메이션 지연 효과 */
+.wave-text span:nth-child(1) { animation-delay: 0s; }
+.wave-text span:nth-child(2) { animation-delay: 0.2s; }
+.wave-text span:nth-child(3) { animation-delay: 0.4s; }
+.wave-text span:nth-child(4) { animation-delay: 0.6s; }
 
 @keyframes wave {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
-/* Skill cards */
-.skills,
-.projects {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+/*============================================================================================================================================
+    
+    Unified Table Style (Skills & Projects)
+    - 스킬과 프로젝트 섹션 모두에 적용되는 공통 테이블 스타일입니다.
+
+/*============================================================================================================================================*/
+
+/* 테이블 컨테이너 (모바일 스크롤 지원) */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #1c1c1c;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(140, 140, 140, 0.25);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    margin-bottom: 2rem;
 }
 
-.skills h2,
-.projects h2 {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+/* 테이블 기본 */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
     text-align: left;
+    color: var(--color-light);
+    min-width: 700px; /* 프로젝트 설명 때문에 최소 너비를 조금 더 확보 */
+}
+
+/* 헤더 스타일 */
+.custom-table thead {
+    background-color: rgba(56, 115, 166, 0.15);
+}
+
+.custom-table th {
+    padding: 1.2rem;
+    font-size: 1rem;
+    color: var(--color-emphasis);
+    border-bottom: 2px solid rgba(191, 191, 191, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+/* 셀 스타일 */
+.custom-table td {
+    padding: 1.5rem 1.2rem;
+    border-bottom: 1px solid rgba(191, 191, 191, 0.1);
+    vertical-align: middle; /* 세로 중앙 정렬 */
+}
+
+/* 마지막 행 테두리 제거 */
+.custom-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 행 호버 효과 */
+.custom-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    transition: background-color 0.2s ease;
+}
+
+/* 텍스트 스타일 유틸리티 */
+.fw-bold {
+    font-weight: bold;
+    font-size: 1.1rem;
     color: var(--color-light);
 }
 
-/* 카드 그리드 */
-.skills-grid,
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.2rem;
-}
-
-/* 개별 카드 */
-.skill-card,
-.project-card {
-    background-color: #1c1c1c; /* var(--color-dark)보다 살짝 밝게 */
-    border-radius: 0.9rem;
-    padding: 1.2rem 1.1rem;
-    box-shadow:
-        0 14px 30px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(191, 191, 191, 0.18);
-    transition: transform 0.18s ease, box-shadow 0.18s ease,
-                background-color 0.18s ease, border-color 0.18s ease;
-    border: 1px solid rgba(140, 140, 140, 0.25);
-}
-
-/* 호버 시 강조 */
-.skill-card:hover,
-.project-card:hover {
-    transform: translateY(-4px);
-    background-color: #202020;
-    border-color: var(--color-emphasis);
-    box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.65),
-        0 0 0 1px rgba(56, 115, 166, 0.7);
-}
-
-/* 카드 제목 */
-.skill-card h3,
-.project-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-emphasis);
-}
-
-/* 카드 설명 */
-.skill-desc,
-.project-desc {
+.sub-text {
     font-size: 0.85rem;
     color: var(--color-gray);
-    line-height: 1.6;
-    margin-bottom: 0.8rem;
+    font-weight: normal;
 }
 
-/* 스킬 태그 리스트 */
-.skill-tags,
-.project-tags  {
+.desc-text {
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+}
+
+/* 태그 리스트 스타일 */
+.table-tags {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.4rem;
     padding: 0;
     margin: 0;
 }
 
-/* 개별 태그 pill 스타일 */
-.skill-tags li,
-.project-tags li {
+.table-tags li {
     font-size: 0.78rem;
-    padding: 0.2rem 0.6rem;
+    padding: 0.25rem 0.7rem;
     border-radius: 999px;
-    background-color: rgba(242, 242, 242, 0.07); /* var(--color-light) 살짝 투명 */
+    background-color: rgba(242, 242, 242, 0.07);
     color: var(--color-light);
-    border: 1px solid rgba(191, 191, 191, 0.4);
+    border: 1px solid rgba(191, 191, 191, 0.3);
     white-space: nowrap;
 }
 
-/* 프로젝트 링크 버튼 */
-.project-link {
+/* 링크 버튼 스타일 */
+.table-link {
     display: inline-block;
-    margin-top: 0.2rem;
-    font-size: 0.8rem;
-    padding: 0.35rem 0.9rem;
-    border-radius: 999px;
-    text-decoration: none;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
     color: var(--color-light);
     background-color: var(--color-emphasis);
-    transition: background-color 0.15s ease, transform 0.15s ease;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
 }
 
-.project-link:hover {
+.table-link:hover {
     background-color: #285173;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
-/* Mobile */
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .custom-table th, 
+    .custom-table td {
+        padding: 1rem 0.8rem;
+    }
+    
+    .desc-text {
+        min-width: 200px; /* 모바일에서 설명글이 너무 좁아지지 않게 */
+    }
+}
+
+/*============================================================================================================================================
+
+    7. 반응형 디자인 (Responsive Design)
+    - 모바일 및 태블릿 화면 대응
+
+/*============================================================================================================================================*/
+
+@media (max-width: 768px) {
+    /* 모바일에서 테이블 컨테이너 모서리 조정 */
+    .skills-table-container {
+        border-radius: 0.5rem;
+    }
+    
+    /* 모바일 테이블 패딩 축소 */
+    .skills-table th, 
+    .skills-table td {
+        padding: 1rem 0.8rem;
+    }
+
+    /* 프로젝트 그리드 간격 조정 */
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1열로 변경 */
+    }
+
+    .hero-name {
+        font-size: 2rem;
+    }
+    
+    .wave-text span {
+        font-size: 3rem;
+    }
+}
+
 @media (max-width: 600px) {
-    .skills {
+    .skills, .projects {
         margin-top: 2rem;
     }
 }
